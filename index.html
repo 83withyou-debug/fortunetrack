@@ -993,7 +993,7 @@ textarea.fi{min-height:120px;resize:vertical}
 </sc-if>
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<button type="submit" class="btn btn-main" style="min-width: 260px; border: none; cursor: pointer; font-size: 19px">상담 신청하기</button>
+<button type="submit" class="btn btn-main" disabled="{{sending}}" style="min-width: 260px; border: none; cursor: pointer; font-size: 19px">{{submitLabel}}</button>
 <p style="margin: 0; font-size: 14px; color: #6B67A0; text-align: center">대면 상담 · 서울역 · 사당역 · 강남역 공용 오피스 (상세 위치는 예약자에 한해 개별 공지)<br>운영시간 · 평일·토요일 오전 10:00 ~ 오후 10:00 (일요일·공휴일 휴무)</p>
 </div>
 </form>
@@ -1002,7 +1002,7 @@ textarea.fi{min-height:120px;resize:vertical}
 <sc-if value="{{showDone}}" hint-placeholder-val="{{ false }}">
 <div class="pop" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
 <svg class="float" width="96" height="96" viewBox="0 0 60 60" aria-hidden="true"><defs><radialGradient id="dn" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".6" stop-color="#D9CFFF"></stop><stop offset="1" stop-color="#8874F5"></stop></radialGradient></defs><circle cx="30" cy="32" r="22" fill="url(#dn)"></circle><path d="M20 31 q3 -4 6 0" stroke="#29265A" stroke-width="2.4" fill="none" stroke-linecap="round"></path><path d="M34 31 q3 -4 6 0" stroke="#29265A" stroke-width="2.4" fill="none" stroke-linecap="round"></path><ellipse cx="18" cy="38" rx="4" ry="2.4" fill="#F5B8DF"></ellipse><ellipse cx="42" cy="38" rx="4" ry="2.4" fill="#F5B8DF"></ellipse><path d="M25 38 q5 5 10 0" stroke="#29265A" stroke-width="2.2" fill="none" stroke-linecap="round"></path><path d="M48 8l1.5 3.5 3.5 1.5-3.5 1.5L48 18l-1.5-3.5L43 13l3.5-1.5z" fill="#FFE38A"></path></svg>
-<h3 class="disp" style="margin: 0; font-size: 28px">신청서가 작성됐어요! 💜</h3>
+<h3 class="disp" style="margin: 0; font-size: 28px">상담 신청이 접수됐어요! 💜</h3>
 <p style="margin: 0; font-size: 16px; color: #4B4785">확인 후 남겨 주신 연락처로 예약 확정 안내를 드릴게요.</p>
 <div style="width: 100%; max-width: 440px; background: rgba(255,255,255,.8); border-radius: 22px; padding: 18px 20px; text-align: left; display: flex; flex-direction: column; gap: 8px; font-size: 15px">
 <div style="display: flex; gap: 12px"><span class="disp" style="width: 72px; color: #8874F5">상담</span><span>{{sum.kind}} · {{sum.plan}}</span></div>
@@ -1010,7 +1010,6 @@ textarea.fi{min-height:120px;resize:vertical}
 <div style="display: flex; gap: 12px"><span class="disp" style="width: 72px; color: #8874F5">희망 일정</span><span>{{sum.when}}</span></div>
 <div style="display: flex; gap: 12px"><span class="disp" style="width: 72px; color: #8874F5">신청자</span><span>{{sum.who}}</span></div>
 </div>
-<span class="ready">● 실제 접수 연결 준비 중 · 지금은 신청서 화면만 동작해요</span>
 <button type="button" class="link-btn" onClick="{{reset}}">← 새로 작성하기</button>
 </div>
 </sc-if>
@@ -1079,11 +1078,12 @@ const COUNSELORS = {
   saju: ['상관없음', '소울 (타로)', '미래 (타로)', '서윤 (사주)', '현우 (사주)'],
   special: ['상관없음', '소울 (타로)', '미래 (타로)', '서윤 (사주)', '현우 (사주)']
 };
+const FORM_URL = 'https://script.google.com/macros/s/AKfycbzplqGchgoUnX1hpDWPfUOmiXVucudft5iFVgkAafFxTWapcVZmkOFy-colttIxpMll/exec';
 const EMPTY = { kind: 'tarot', plan: 0, counselor: '상관없음', name: '', phone: '', date: '', time: '', memo: '', agree: false, policy: false };
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { f: Object.assign({}, EMPTY), done: false, error: '' };
+    this.state = { f: Object.assign({}, EMPTY), done: false, error: '', sending: false };
   }
   renderVals() {
     const f = this.state.f;
@@ -1121,6 +1121,8 @@ class Component extends DCLogic {
       onMemo: val('memo'),
       onAgree: (e) => set({ agree: e.target.checked }),
       onPolicy: (e) => set({ policy: e.target.checked }),
+      sending: this.state.sending,
+      submitLabel: this.state.sending ? '보내는 중…' : '상담 신청하기',
       hasError: !!this.state.error,
       error: this.state.error,
       submit: (e) => {
@@ -1133,9 +1135,19 @@ class Component extends DCLogic {
         if (new Date(f.date + 'T12:00:00').getDay() === 0) { this.setState({ error: '일요일은 휴무예요. 다른 날짜를 선택해 주세요.' }); return; }
         if (f.time && (f.time < '10:00' || f.time > '22:00')) { this.setState({ error: '상담 운영시간(오전 10:00 ~ 오후 10:00) 안에서 선택해 주세요.' }); return; }
         if (!f.agree || !f.policy) { this.setState({ error: '필수 동의 항목에 체크해 주세요.' }); return; }
-        this.setState({ done: true, error: '' });
+        if (this.state.sending) return;
+        const pl = plans[f.plan] || plans[0];
+        const payload = { kind: kindLabel, plan: pl.join(' '), counselor: f.counselor, name: f.name.trim(), phone: f.phone.trim(), date: f.date, time: f.time, memo: f.memo, agree: f.agree, policy: f.policy };
+        this.setState({ sending: true, error: '' });
+        fetch(FORM_URL, { method: 'POST', body: JSON.stringify(payload) })
+          .then((r) => r.json())
+          .then((res) => {
+            if (res && res.ok) this.setState({ done: true, sending: false, error: '' });
+            else throw new Error('save failed');
+          })
+          .catch(() => this.setState({ sending: false, error: '신청서를 보내지 못했어요. 잠시 후 다시 시도해 주세요.' }));
       },
-      reset: () => this.setState({ f: Object.assign({}, EMPTY), done: false, error: '' }),
+      reset: () => this.setState({ f: Object.assign({}, EMPTY), done: false, error: '', sending: false }),
       sum: {
         kind: kindLabel,
         plan: (plans[f.plan] || plans[0]).join(' '),
