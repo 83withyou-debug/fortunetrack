@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>FORTUNE TRACK 포츈트랙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="나를 알면, 운이 보입니다. 성향검사부터 타로·사주 대면 상담까지, 포츈트랙">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&amp;family=Gowun+Dodum&amp;family=Nunito:wght@800;900&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F7F4FF}
+a{color:#29265A}a:hover{color:#8874F5}
+.ft *{box-sizing:border-box}
+.ft h1,.ft h2,.ft h3{text-wrap:balance}
+.ft p,.ft li,.ft .a{text-wrap:pretty}
+.ft{word-break:keep-all;overflow-wrap:break-word;line-break:strict;font-family:'Gowun Dodum','Pretendard',sans-serif;color:#29265A;line-height:1.6;overflow-x:hidden}
+.disp{font-family:'Cafe24 Ssurround','Jua','Gmarket Sans',sans-serif;font-weight:400;letter-spacing:-0.01em}
+.logo{font-family:'Nunito',sans-serif;font-weight:900;letter-spacing:0.04em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 28px;border-radius:999px;font-family:'Jua',sans-serif;font-size:18px;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-3px)}
+.btn-main{background:linear-gradient(135deg,#8874F5,#9F8CFF 55%,#8FB8FF);color:#FFFFFF;box-shadow:0 10px 28px rgba(136,116,245,.45)}
+.btn-main:hover{color:#FFFFFF;box-shadow:0 16px 36px rgba(136,116,245,.55)}
+.btn-ghost{background:rgba(255,255,255,.75);color:#29265A;border:2px solid #C5B7FF;box-shadow:0 8px 22px rgba(197,183,255,.4)}
+.btn-ghost:hover{color:#29265A;background:#FFFFFF}
+.glass{background:rgba(255,255,255,.66);border:1.5px solid rgba(255,255,255,.95);border-radius:32px;box-shadow:0 18px 50px rgba(136,116,245,.16),inset 0 1px 0 #FFFFFF;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.lift{transition:transform .3s cubic-bezier(.3,1.4,.5,1),box-shadow .3s ease}
+.lift:hover{transform:translateY(-8px) rotate(-.6deg);box-shadow:0 26px 60px rgba(136,116,245,.28)}
+.nav a{font-family:'Jua',sans-serif;font-size:16px;text-decoration:none;padding:10px 14px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+.nav a:hover{background:#EFEAFF}
+.float{animation:float 4.5s ease-in-out infinite}
+.float2{animation:float 6s ease-in-out infinite reverse}
+.twinkle{animation:twinkle 2.6s ease-in-out infinite}
+.wiggle{animation:wiggle 3.2s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+@keyframes wiggle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@keyframes bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.bar{transform-origin:left;animation:bar 1.4s cubic-bezier(.2,.8,.2,1) both}
+@supports (animation-timeline: view()){
+.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E2DAFF;font-family:'Jua',sans-serif;font-size:15px;color:#5A4FC4}
+.opt{display:flex;align-items:center;gap:12px;width:100%;min-height:60px;padding:14px 18px;border-radius:22px;border:2px solid #E2DAFF;background:#FFFFFF;font-family:'Gowun Dodum',sans-serif;font-size:17px;color:#29265A;text-align:left;cursor:pointer;transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
+.opt:hover{border-color:#8874F5;background:#F5F1FF;transform:translateY(-2px);box-shadow:0 10px 22px rgba(136,116,245,.2)}
+.opt-badge{width:34px;height:34px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,#C5B7FF,#8874F5);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-weight:900}
+.link-btn{background:none;border:none;color:#5A4FC4;font-family:'Gowun Dodum',sans-serif;font-size:15px;min-height:44px;cursor:pointer;padding:0 4px}
+.link-btn:hover{color:#29265A}
+.cprof{border-radius:18px;background:rgba(255,255,255,.7)}
+.cprof summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:10px 16px;font-family:'Jua',sans-serif;font-size:15px;color:#5A4FC4}
+.cprof summary::-webkit-details-marker{display:none}
+.cprof .plus{width:26px;height:26px}
+.cprof[open] .plus{transform:rotate(45deg);background:#F5D9F0}
+.cprof .body{padding:0 16px 16px;font-size:14px;color:#4B4785;display:flex;flex-direction:column;gap:12px}
+.cprof h4{margin:0 0 4px;font-family:'Jua',sans-serif;font-weight:400;font-size:14px}
+.cprof ul{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:3px}
+
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;padding:8px 18px;border-radius:999px;border:2px solid #E2DAFF;background:#FFFFFF;color:#29265A;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer;transition:all .2s ease}
+.pill:hover{border-color:#8874F5}
+.pill.on{background:linear-gradient(135deg,#8874F5,#9F8CFF 60%,#8FB8FF);border-color:transparent;color:#FFFFFF;box-shadow:0 8px 20px rgba(136,116,245,.35)}
+.pill small{font-family:'Gowun Dodum',sans-serif;font-size:13px;opacity:.8}
+.fl{display:block;font-family:'Jua',sans-serif;font-size:16px;color:#29265A;margin-bottom:8px}
+.fl em{font-style:normal;color:#C76BAF;margin-left:4px}
+.fi{width:100%;min-height:52px;padding:12px 16px;border-radius:18px;border:2px solid #E2DAFF;background:#FFFFFF;font-family:'Gowun Dodum',sans-serif;font-size:16px;color:#29265A;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.fi:focus{border-color:#8874F5;box-shadow:0 0 0 4px rgba(136,116,245,.15)}
+textarea.fi{min-height:120px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#4B4785;cursor:pointer}
+.chk input{width:22px;height:22px;accent-color:#8874F5;flex-shrink:0;margin-top:1px}
+
+.rv-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 4px 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-card{flex:0 0 clamp(280px,31%,370px);scroll-snap-align:start}
+.arrow-btn{width:50px;height:50px;border-radius:50%;border:2px solid #C5B7FF;background:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 20px rgba(136,116,245,.2);transition:transform .2s ease,background .2s ease}
+.arrow-btn:hover{transform:translateY(-2px);background:#F5F1FF}
+
+.fab{position:fixed;right:24px;bottom:24px;z-index:60;min-height:58px;padding:0 26px;font-size:17px;border:3px solid #FFFFFF;animation:glow 2.4s ease-in-out infinite}
+.fab:hover{transform:translateY(-4px) scale(1.03)}
+@keyframes glow{0%,100%{box-shadow:0 10px 28px rgba(136,116,245,.45),0 0 0 0 rgba(197,183,255,.6)}50%{box-shadow:0 14px 34px rgba(136,116,245,.55),0 0 0 10px rgba(197,183,255,0)}}
+@media (max-width:760px){.fab{left:16px;right:16px;bottom:16px}}
+.faq{background:rgba(255,255,255,.72);border:1.5px solid rgba(255,255,255,.95);border-radius:26px;box-shadow:0 10px 30px rgba(136,116,245,.12);transition:box-shadow .25s ease,background .25s ease}
+.faq:hover{box-shadow:0 14px 36px rgba(136,116,245,.22)}
+.faq[open]{background:#FFFFFF}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;min-height:68px;padding:14px 20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq .q{width:36px;height:36px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,#C5B7FF,#8874F5);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-weight:900}
+.faq .plus{margin-left:auto;flex-shrink:0;width:32px;height:32px;border-radius:50%;background:#EFEAFF;display:flex;align-items:center;justify-content:center;transition:transform .3s ease}
+.faq[open] .plus{transform:rotate(45deg);background:#F5D9F0}
+.faq .a{padding:0 20px 20px 70px;color:#4B4785;font-size:16px}
+.ph{display:inline-block;padding:1px 10px;border-radius:8px;background:#FFF3FB;border:1.5px dashed #E7A8D6;color:#8A3F75;font-size:14px}
+@media (max-width:760px){.faq .a{padding:0 18px 18px 18px}}
+@keyframes pop{from{opacity:0;transform:scale(.92) translateY(10px)}to{opacity:1;transform:none}}
+.pop{animation:pop .45s cubic-bezier(.3,1.4,.5,1) both}
+.ready{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:#FFF3FB;border:1.5px dashed #E7A8D6;font-size:13px;color:#8A3F75;font-family:'Gowun Dodum',sans-serif}
+@media (max-width:860px){.why-flow{grid-template-columns:1fr !important}.why-arrow svg{transform:rotate(90deg)}}
+@media (max-width:760px){.nav-links{display:none !important}.hero-grid{grid-template-columns:1fr !important;text-align:center}.hero-btns{justify-content:center}.hide-m{display:none !important}}
+@media (prefers-reduced-motion:reduce){.float,.float2,.twinkle,.wiggle,.bar,.reveal{animation:none !important}}
+</style>
+</helmet>
+<div class="ft" style="width: 100%; background: linear-gradient(180deg, #F3EEFF 0%, #EAF2FF 22%, #FBF0FA 45%, #F1ECFF 70%, #E6F0FF 100%)">
+
+<!-- ================= TOP NAV ================= -->
+<header style="position: sticky; top: 0; z-index: 50; padding: 12px 16px">
+<nav class="glass nav" aria-label="메인 메뉴" style="max-width: 1200px; margin: 0 auto; border-radius: 999px; padding: 8px 10px 8px 22px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<a href="#top" class="logo" style="font-size: 19px; padding: 6px 0; gap: 8px; background: none">
+<svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8874F5"></stop><stop offset="1" stop-color="#8FB8FF"></stop></linearGradient></defs><path d="M17 3a10 10 0 1 0 6 17A8 8 0 0 1 17 3z" fill="url(#lg1)"></path><path d="M19 8l.9 2 2 .9-2 .9-.9 2-.9-2-2-.9 2-.9z" fill="#F5D9F0"></path></svg>
+<span style="background: linear-gradient(90deg, #8874F5, #6F9BEA); -webkit-background-clip: text; background-clip: text; color: transparent">FORTUNE TRACK</span>
+</a>
+<div class="nav-links" style="display: flex; gap: 2px; align-items: center">
+<a href="#about">ABOUT</a>
+<a href="#analysis">성향 분석</a>
+<a href="#tarot">타로·사주</a>
+<a href="#price">요금</a>
+<a href="#shop">FORTUNE SHOP</a>
+<a href="#qna">Q&amp;A</a>
+</div>
+<a href="#apply" class="btn btn-main" style="min-height: 44px; padding: 0 20px; font-size: 15px">상담 신청</a>
+</nav>
+</header>
+
+<!-- ================= PART 01 HERO ================= -->
+<section id="top" style="position: relative; padding: 48px 20px 96px">
+<svg class="twinkle hide-m" style="position: absolute; left: 6%; top: 60px" width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="#C5B7FF"></path></svg>
+<svg class="twinkle" style="position: absolute; right: 8%; top: 40px; animation-delay: .8s" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="#BBD9FF"></path></svg>
+<svg class="float2 hide-m" style="position: absolute; left: 3%; bottom: 80px" width="56" height="56" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#F5D9F0" stroke="#E7A8D6" stroke-width="1"></path></svg>
+
+<div class="hero-grid" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 32px; align-items: center">
+<div>
+<span class="chip">✦ 나를 알면, 운이 보입니다</span>
+<h1 class="disp" style="margin: 22px 0 18px; font-size: clamp(40px, 6.2vw, 76px); line-height: 1.15; color: #29265A">혹시 나에 대해<br><span style="background: linear-gradient(90deg, #8874F5, #7FA8F5); -webkit-background-clip: text; background-clip: text; color: transparent">얼마나 알고 있나요?</span> <span style="color: #E7A8D6">♡</span></h1>
+<p style="margin: 0 0 34px; font-size: clamp(17px, 2vw, 20px); color: #4B4785">나의 성향부터 타로와 사주까지!<br>포츈트랙에서 나만의 행운을 찾아봐요.</p>
+<div class="glass hero-btns" style="margin-top: 0; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 22px; font-size: 14px">
+<span class="disp" style="color: #5A4FC4">① 마이트랙 성향검사</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8874F5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+<span class="disp"><span style="color: #B0569A">나우트랙 타로</span> <span style="color: #6B67A0">or</span> <span style="color: #3E6CC4">플로우트랙 사주</span></span>
+<span style="font-size: 12px; padding: 2px 8px; border-radius: 99px; background: #EFEAFF; color: #5A4FC4">선택</span>
+<span style="color: #6B67A0">· 모든 상담은 성향 분석부터 시작해요</span>
+</div>
+<p style="margin: 16px 0 0; font-size: 14px; color: #6B67A0">나를 알아가는 작은 시작, 나만의 행운을 찾아가는 여정.</p>
+</div>
+
+<!-- hero character -->
+<div style="position: relative; display: flex; justify-content: center; align-items: center; min-height: 460px">
+<div style="position: absolute; width: min(440px, 88vw); height: min(440px, 88vw); border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #E3DBFF 40%, #C5B7FF 70%, rgba(187,217,255,0) 72%); filter: blur(2px)"></div>
+<div style="position: absolute; width: min(470px, 92vw); height: min(470px, 92vw); border-radius: 50%; border: 2px dashed rgba(136,116,245,.35)"></div>
+<svg class="float" role="img" aria-label="별을 안고 있는 포츈트랙 달 캐릭터" width="360" height="380" viewBox="0 0 360 380" style="position: relative; max-width: 80vw; height: auto">
+<defs>
+<radialGradient id="hb" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".35" stop-color="#E6DEFF"></stop><stop offset=".8" stop-color="#A897FA"></stop><stop offset="1" stop-color="#8874F5"></stop></radialGradient>
+<radialGradient id="hs" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#FFFBE0"></stop><stop offset=".55" stop-color="#FFE38A"></stop><stop offset="1" stop-color="#F5B94E"></stop></radialGradient>
+<radialGradient id="hm" cx="30%" cy="30%" r="80%"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".6" stop-color="#D7E8FF"></stop><stop offset="1" stop-color="#8FB8FF"></stop></radialGradient>
+<filter id="hsd" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#8874F5" flood-opacity=".35"></feDropShadow></filter>
+</defs>
+<ellipse cx="180" cy="362" rx="110" ry="12" fill="#8874F5" opacity=".18"></ellipse>
+<!-- ears / moon horns -->
+<path d="M96 120 C70 70 92 36 120 44 C112 70 118 96 134 112 Z" fill="url(#hm)" filter="url(#hsd)"></path>
+<path d="M264 120 C290 70 268 36 240 44 C248 70 242 96 226 112 Z" fill="url(#hm)"></path>
+<!-- body -->
+<path d="M180 92 C266 92 300 160 300 226 C300 300 248 340 180 340 C112 340 60 300 60 226 C60 160 94 92 180 92 Z" fill="url(#hb)" filter="url(#hsd)"></path>
+<ellipse cx="140" cy="140" rx="34" ry="18" fill="#FFFFFF" opacity=".7" transform="rotate(-25 140 140)"></ellipse>
+<!-- face -->
+<ellipse cx="146" cy="210" rx="11" ry="14" fill="#29265A"></ellipse>
+<ellipse cx="214" cy="210" rx="11" ry="14" fill="#29265A"></ellipse>
+<circle cx="150" cy="204" r="4" fill="#FFFFFF"></circle>
+<circle cx="218" cy="204" r="4" fill="#FFFFFF"></circle>
+<ellipse cx="124" cy="236" rx="16" ry="9" fill="#F5B8DF" opacity=".75"></ellipse>
+<ellipse cx="236" cy="236" rx="16" ry="9" fill="#F5B8DF" opacity=".75"></ellipse>
+<path d="M168 232 Q180 244 192 232" stroke="#29265A" stroke-width="4.5" fill="none" stroke-linecap="round"></path>
+<!-- star held -->
+<g class="wiggle">
+<path d="M180 252 l15 30 33 5 -24 23 6 33 -30 -16 -30 16 6 -33 -24 -23 33 -5 z" fill="url(#hs)" stroke="#F0A93A" stroke-width="2" stroke-linejoin="round"></path>
+<circle cx="172" cy="294" r="3" fill="#29265A"></circle><circle cx="190" cy="294" r="3" fill="#29265A"></circle>
+<path d="M176 304 q5 5 10 0" stroke="#29265A" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
+</g>
+<!-- arms -->
+<ellipse cx="128" cy="292" rx="22" ry="16" fill="#B7A8FC" transform="rotate(-20 128 292)"></ellipse>
+<ellipse cx="232" cy="292" rx="22" ry="16" fill="#B7A8FC" transform="rotate(20 232 292)"></ellipse>
+</svg>
+<!-- floating stickers -->
+<div class="glass float2" style="position: absolute; top: 18px; right: 4%; padding: 12px 16px; border-radius: 22px; display: flex; align-items: center; gap: 10px">
+<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><g fill="#8ED1A6"><circle cx="8.5" cy="8.5" r="4.5"></circle><circle cx="15.5" cy="8.5" r="4.5"></circle><circle cx="8.5" cy="15.5" r="4.5"></circle><circle cx="15.5" cy="15.5" r="4.5"></circle></g><path d="M12 12 q2 6 5 9" stroke="#5DAE7B" stroke-width="1.6" fill="none"></path></svg>
+<span class="disp" style="font-size: 15px">오늘의 행운</span>
+</div>
+<div class="glass float" style="position: absolute; bottom: 36px; left: 2%; padding: 12px 16px; border-radius: 22px; display: flex; align-items: center; gap: 10px; animation-delay: 1s">
+<svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#F5B8DF"></path></svg>
+<span class="disp" style="font-size: 15px">나를 먼저 알기</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= PART 02 ABOUT ================= -->
+<section id="about" style="padding: 96px 20px; scroll-margin-top: 90px">
+<div class="reveal" style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<span class="chip">ABOUT · 포츈트랙</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(30px, 4.4vw, 50px); line-height: 1.25">운을 보기 전에,<br>먼저 나를 알아봐요!</h2>
+<p style="margin: 0; max-width: 640px; font-size: 18px; color: #4B4785">사람마다 성격도, 생각하는 방식도, 사랑하는 방식도 모두 다르니까!</p>
+<p style="margin: 0; max-width: 640px; font-size: 18px; color: #4B4785">포츈트랙은 특별한 성향 분석 도구를 통해 나를 먼저 깊이 이해하고, 그 이해를 바탕으로 나의 운의 흐름을 함께 찾아가요.</p>
+</div>
+<!-- WHY : 성향검사를 먼저 하는 이유 -->
+<div id="why" style="max-width: 1100px; margin: 88px auto 0; scroll-margin-top: 90px">
+<div class="reveal" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px">
+<span class="chip">WHY · 포츈트랙의 상담 방식</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.25">왜 성향검사를 먼저 진행할까요?</h2>
+<p class="disp" style="margin: 4px 0 0; font-size: clamp(20px, 2.6vw, 26px); color: #5A4FC4">좋은 상담은 나를 이해하는 것에서부터 시작됩니다.</p>
+<p style="margin: 0; max-width: 680px; font-size: 17px; color: #4B4785">사람마다 타고난 기질과 성격이 다르고, 같은 상황에서도 생각하고 반응하며 선택하는 방식은 모두 다릅니다. 따라서 먼저 성향검사를 통해 나의 성격과 심리적 특성, 사고방식과 행동 패턴을 이해합니다.</p>
+</div>
+
+<!-- 3-step flow -->
+<div class="why-flow" style="margin-top: 44px; display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr) 40px minmax(0, 1fr); gap: 12px; align-items: stretch">
+
+<div class="glass lift reveal" style="padding: 30px 24px; display: flex; flex-direction: column; gap: 12px; border-radius: 30px; border: 2px solid #C5B7FF">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span class="logo" style="font-size: 13px; color: #8874F5">01 · MY TRACK</span>
+<span style="font-size: 12px; padding: 3px 10px; border-radius: 99px; background: #8874F5; color: #FFFFFF; font-family: 'Jua', sans-serif">출발점</span>
+</div>
+<div style="width: 68px; height: 68px; border-radius: 22px; background: linear-gradient(135deg, #E3DBFF, #C5B7FF); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(136,116,245,.3)">
+<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2"></path><circle cx="11" cy="9.5" r="1.8"></circle><path d="M8 14c.7-1.4 1.8-2 3-2s2.3.6 3 2"></path></svg>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 24px">마이트랙 성향검사</h3>
+<p class="disp" style="margin: 0; font-size: 17px; color: #5A4FC4">나를 이해하는 출발점</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span class="chip" style="font-size: 13px; padding: 4px 10px">성격</span>
+<span class="chip" style="font-size: 13px; padding: 4px 10px">심리적 특성</span>
+<span class="chip" style="font-size: 13px; padding: 4px 10px">사고방식</span>
+<span class="chip" style="font-size: 13px; padding: 4px 10px">행동 패턴</span>
+</div>
+</div>
+
+<div class="why-arrow" aria-hidden="true" style="display: flex; align-items: center; justify-content: center">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#8874F5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</div>
+
+<div class="glass lift reveal" style="padding: 30px 24px; display: flex; flex-direction: column; gap: 12px; border-radius: 30px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span class="logo" style="font-size: 13px; color: #B0569A">NOW TRACK</span>
+<span style="font-size: 12px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #8A3F75; font-family: 'Jua', sans-serif">선택 A</span>
+</div>
+<div style="width: 68px; height: 68px; border-radius: 22px; background: linear-gradient(135deg, #FCE8F6, #F5D9F0); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(231,168,214,.35)">
+<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#B0569A" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="2.5" transform="rotate(-8 10 11)"></rect><rect x="9" y="5" width="11" height="16" rx="2.5" fill="#FFFFFF" transform="rotate(8 14 13)"></rect><path d="M14.6 10.6l.9 1.9 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z" fill="#E39BCF" stroke="none"></path></svg>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 24px">나우트랙 타로 상담</h3>
+<p class="disp" style="margin: 0; font-size: 17px; color: #B0569A">현재를 돌아보는 과정</p>
+<p style="margin: 0; font-size: 15px; color: #4B4785">지금 내가 마주한 고민과 감정, 관계와 선택의 방향을 살펴봐요.</p>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: center">
+<span class="logo" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; border: 2px solid #C5B7FF; color: #8874F5; font-size: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(136,116,245,.25)">OR</span>
+</div>
+
+<div class="glass lift reveal" style="padding: 30px 24px; display: flex; flex-direction: column; gap: 12px; border-radius: 30px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span class="logo" style="font-size: 13px; color: #3E6CC4">FLOW TRACK</span>
+<span style="font-size: 12px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #2E5AA8; font-family: 'Jua', sans-serif">선택 B</span>
+</div>
+<div style="width: 68px; height: 68px; border-radius: 22px; background: linear-gradient(135deg, #DCEBFF, #BBD9FF); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(143,184,255,.35)">
+<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3E6CC4" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 16c3-6 6-6 9-2s6 4 9-4"></path><path d="M15 3.5a4 4 0 1 0 4.6 5.2A3.2 3.2 0 0 1 15 3.5z" fill="#BBD9FF"></path></svg>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 24px">플로우트랙 사주 상담</h3>
+<p class="disp" style="margin: 0; font-size: 17px; color: #3E6CC4">삶의 큰 흐름을 살펴보는 과정</p>
+<p style="margin: 0; font-size: 15px; color: #4B4785">타고난 기질과 인생의 흐름을 전통 명리학의 관점에서 알아봐요.</p>
+</div>
+</div>
+
+<!-- contrast -->
+<div class="reveal" style="margin: 48px auto 0; max-width: 860px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+<div style="border-radius: 26px; padding: 22px 24px; background: rgba(255,255,255,.45); border: 1.5px dashed #C9C3E8; display: flex; gap: 12px; align-items: center">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8A86B8" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 8l8 8M16 8l-8 8"></path></svg>
+<p style="margin: 0; font-size: 16px; color: #6B67A0">운명을 <strong style="font-weight: 700">듣는 데서 끝나는</strong> 상담</p>
+</div>
+<div style="border-radius: 26px; padding: 22px 24px; background: linear-gradient(135deg, #8874F5, #8FB8FF); color: #FFFFFF; display: flex; gap: 12px; align-items: center; box-shadow: 0 14px 32px rgba(136,116,245,.35)">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M7.5 12.5l3 3 6-6.5"></path></svg>
+<p style="margin: 0; font-size: 16px">나 자신을 이해하고 <strong class="disp" style="font-weight: 400; font-size: 17px">더 나은 선택</strong>을 할 수 있도록 돕는 상담</p>
+</div>
+</div>
+
+<!-- key message -->
+<div class="reveal" style="margin-top: 36px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+<p style="margin: 0; font-size: 17px; color: #4B4785">그것이 성향검사 후 타로와 사주 상담을 진행하는 가장 큰 이유입니다.</p>
+</div>
+</div>
+</section>
+
+<!-- ================= PART 03 ANALYSIS ================= -->
+<section id="analysis" style="padding: 96px 20px; scroll-margin-top: 90px">
+<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center">
+<div class="reveal" style="display: flex; flex-direction: column; gap: 18px">
+<span class="chip">STEP 01 · MY TRACK 마이트랙</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(30px, 4.4vw, 50px); line-height: 1.25">나는 어떤 유형의<br>사람일까? 🔍</h2>
+<p style="margin: 0; font-size: 18px; color: #4B4785">내가 몰랐던 나의 모습까지!<br>특별한 성향 분석으로 나를 자세히 알아봐요.</p>
+<div class="glass" style="border-radius: 22px; padding: 16px 18px; display: flex; gap: 12px; align-items: flex-start; background: rgba(255,255,255,.8)">
+<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="#8874F5"></path></svg>
+<p style="margin: 0; font-size: 16px; color: #29265A"><strong class="disp" style="font-weight: 400; color: #5A4FC4">타로·사주 상담 전 꼭 거치는 첫 단계, 마이트랙 성향검사예요.</strong><br>성향 분석 결과를 바탕으로 상담이 진행돼요.</p>
+</div>
+</div>
+
+<!-- MY TRACK card -->
+<div class="reveal" style="position: relative; display: flex; justify-content: center">
+<div class="glass lift" style="width: 100%; max-width: 460px; padding: 30px 26px 26px; border-radius: 36px; position: relative">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px">
+<svg class="float" width="104" height="104" viewBox="0 0 60 60" aria-hidden="true"><defs><radialGradient id="mt" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".6" stop-color="#D9CFFF"></stop><stop offset="1" stop-color="#8874F5"></stop></radialGradient></defs><circle cx="30" cy="32" r="22" fill="url(#mt)"></circle><circle cx="23" cy="31" r="3" fill="#29265A"></circle><circle cx="37" cy="31" r="3" fill="#29265A"></circle><circle cx="24" cy="30" r="1" fill="#FFFFFF"></circle><circle cx="38" cy="30" r="1" fill="#FFFFFF"></circle><ellipse cx="18" cy="38" rx="4" ry="2.4" fill="#F5B8DF"></ellipse><ellipse cx="42" cy="38" rx="4" ry="2.4" fill="#F5B8DF"></ellipse><path d="M26 38 q4 4 8 0" stroke="#29265A" stroke-width="2" fill="none" stroke-linecap="round"></path><circle cx="46" cy="12" r="6" fill="none" stroke="#8874F5" stroke-width="2.2"></circle><path d="M50.5 16.5l4 4" stroke="#8874F5" stroke-width="2.4" stroke-linecap="round"></path></svg>
+<p class="logo" style="margin: 0; font-size: 13px; color: #8874F5">MY TRACK</p>
+<p class="disp" style="margin: 0; font-size: 22px">마이트랙으로 알아보는 나</p>
+</div>
+<div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 18px; background: rgba(255,255,255,.75)"><span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 12px; background: #E3DBFF; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900; color: #5A4FC4">1</span><span class="disp" style="font-size: 17px">성격과 성향</span></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 18px; background: rgba(255,255,255,.75)"><span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 12px; background: #F5D9F0; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900; color: #A24C8E">2</span><span class="disp" style="font-size: 17px">감정 패턴</span></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 18px; background: rgba(255,255,255,.75)"><span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 12px; background: #BBD9FF; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900; color: #3E6CC4">3</span><span class="disp" style="font-size: 17px">인간관계 스타일</span></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 18px; background: rgba(255,255,255,.75)"><span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 12px; background: #E3DBFF; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900; color: #5A4FC4">4</span><span class="disp" style="font-size: 17px">사고방식</span></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 18px; background: rgba(255,255,255,.75)"><span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 12px; background: #F5D9F0; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900; color: #A24C8E">5</span><span class="disp" style="font-size: 17px">나의 강점과 가능성</span></div>
+</div>
+</div>
+<svg class="twinkle" style="position: absolute; left: -6px; bottom: 40px" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="#BBD9FF"></path></svg>
+</div>
+</div>
+</section>
+
+<!-- ================= PART 04 TAROT ================= -->
+<section id="tarot" style="padding: 96px 20px; scroll-margin-top: 90px">
+<div style="max-width: 1200px; margin: 0 auto; border-radius: 48px; padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 64px); background: linear-gradient(140deg, #29265A 0%, #4A3E9E 45%, #6B6BD8 80%, #8FB8FF 120%); position: relative; overflow: hidden; color: #FFFFFF; box-shadow: 0 30px 70px rgba(41,38,90,.35)">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%" preserveAspectRatio="none" viewBox="0 0 100 100"><g fill="#FFFFFF"><circle cx="8" cy="12" r=".35" opacity=".8"></circle><circle cx="22" cy="80" r=".3" opacity=".6"></circle><circle cx="40" cy="20" r=".25" opacity=".7"></circle><circle cx="62" cy="9" r=".35" opacity=".8"></circle><circle cx="78" cy="70" r=".3" opacity=".6"></circle><circle cx="92" cy="30" r=".35" opacity=".8"></circle><circle cx="55" cy="92" r=".25" opacity=".6"></circle><circle cx="86" cy="88" r=".3" opacity=".7"></circle></g></svg>
+<svg class="float hide-m" aria-hidden="true" style="position: absolute; right: 5%; top: 40px" width="110" height="110" viewBox="0 0 24 24"><defs><radialGradient id="mn" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#FFFBE6"></stop><stop offset="1" stop-color="#FFD978"></stop></radialGradient></defs><path d="M15 2.5a9.5 9.5 0 1 0 6.5 16.5A7.6 7.6 0 0 1 15 2.5z" fill="url(#mn)"></path></svg>
+
+<div class="reveal" style="position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
+<span class="chip" style="background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.35); color: #FFFFFF">STEP 02 · NOW TRACK 타로 / FLOW TRACK 사주</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(30px, 4.4vw, 50px); line-height: 1.25">그럼 나의 운은 어떨까? 🔮</h2>
+<p style="margin: 0; max-width: 620px; font-size: 18px; color: #E4E0FF">나를 이해했다면 이제 나의 운의 흐름을 살펴볼 시간!<br>성향 분석을 바탕으로 타로와 사주를 통해 나에게 필요한 이야기를 함께 찾아봐요.</p>
+</div>
+
+<!-- tarot cards visual -->
+<div class="reveal" style="position: relative; display: flex; justify-content: center; gap: 0; margin: 44px 0 40px; height: 200px">
+<div class="lift" style="width: 124px; height: 190px; border-radius: 20px; background: linear-gradient(160deg, #C5B7FF, #8874F5); border: 3px solid #FFFFFF; transform: rotate(-12deg) translateY(14px); margin-right: -18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 30px rgba(0,0,0,.25)"><svg width="60" height="60" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3a9 9 0 1 0 6 15.5A7.2 7.2 0 0 1 15 3z" fill="#FFF3C4"></path></svg></div>
+<div class="lift" style="width: 124px; height: 190px; border-radius: 20px; background: linear-gradient(160deg, #F5D9F0, #BBD9FF); border: 3px solid #FFFFFF; z-index: 2; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 36px rgba(0,0,0,.3)"><svg width="66" height="66" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="#8874F5"></path></svg></div>
+<div class="lift" style="width: 124px; height: 190px; border-radius: 20px; background: linear-gradient(160deg, #BBD9FF, #6F9BEA); border: 3px solid #FFFFFF; transform: rotate(12deg) translateY(14px); margin-left: -18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 30px rgba(0,0,0,.25)"><svg width="60" height="60" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#FFFFFF"></path></svg></div>
+</div>
+
+<!-- process strip -->
+<div class="reveal" style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 40px">
+<div style="background: #FFFFFF; color: #29265A; border-radius: 24px; padding: 18px 20px; display: flex; gap: 12px; align-items: center"><span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 14px; background: linear-gradient(135deg, #C5B7FF, #8874F5); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900">1</span><span><span class="disp" style="display: block; font-size: 18px">마이트랙 성향검사</span><span style="font-size: 13px; color: #6B67A0">상담 전 필수 단계</span></span></div>
+<div style="background: rgba(255,255,255,.16); border: 1.5px solid rgba(255,255,255,.4); border-radius: 24px; padding: 18px 20px; display: flex; gap: 12px; align-items: center"><span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 14px; background: #FFFFFF; color: #5A4FC4; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900">2</span><span><span class="disp" style="display: block; font-size: 18px">상담 선택</span><span style="font-size: 13px; color: #E4E0FF">나우트랙 타로 or 플로우트랙 사주</span></span></div>
+<div style="background: rgba(255,255,255,.16); border: 1.5px solid rgba(255,255,255,.4); border-radius: 24px; padding: 18px 20px; display: flex; gap: 12px; align-items: center"><span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 14px; background: #FFFFFF; color: #5A4FC4; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900">3</span><span><span class="disp" style="display: block; font-size: 18px">선택한 상담 진행</span><span style="font-size: 13px; color: #E4E0FF">분석 결과를 바탕으로</span></span></div>
+</div>
+<p class="disp" style="position: relative; margin: 0 0 12px; font-size: 16px; text-align: center; color: #E4E0FF">상담 분야</p>
+<div class="reveal" style="position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.35); font-family: 'Jua', sans-serif; font-size: 15px"><span style="font-size: 16px">💗</span>연애운</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.35); font-family: 'Jua', sans-serif; font-size: 15px"><span style="font-size: 16px">💰</span>금전운</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.35); font-family: 'Jua', sans-serif; font-size: 15px"><span style="font-size: 16px">💼</span>직장운</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.35); font-family: 'Jua', sans-serif; font-size: 15px"><span style="font-size: 16px">✨</span>사업운</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.35); font-family: 'Jua', sans-serif; font-size: 15px"><span style="font-size: 16px">🫶</span>인간관계</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.35); font-family: 'Jua', sans-serif; font-size: 15px"><span style="font-size: 16px">🌙</span>진로와 방향</span>
+</div>
+
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 40px">
+<p style="margin: 0; font-size: 15px; color: #E4E0FF; text-align: center">타로·사주 상담은 성향 분석을 마친 분께 진행돼요.<br>아직이라면 성향 분석부터 시작해 주세요!</p>
+</div>
+</div>
+</section>
+
+<!-- ================= COUNSELORS ================= -->
+<section id="counselors" style="padding: 24px 20px 96px; scroll-margin-top: 90px">
+<div class="reveal" style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px">
+<span class="chip">COUNSELOR · 상담사 소개</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.25">나의 이야기를 함께 찾아줄 상담사</h2>
+<p style="margin: 0; max-width: 600px; font-size: 18px; color: #4B4785">성향 분석 결과를 바탕으로, 포츈트랙 상담사가 타로와 사주로 나에게 필요한 이야기를 전해요.</p>
+</div>
+
+<div style="max-width: 1200px; margin: 36px auto 0">
+<div style="display: flex; justify-content: flex-end">
+<div style="display: flex; gap: 10px">
+<button type="button" class="arrow-btn" aria-label="이전 상담사" onClick="{{prevCounselor}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+<button type="button" class="arrow-btn" aria-label="다음 상담사" onClick="{{nextCounselor}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+</div>
+</div>
+<div class="rv-track" ref="{{setCTrack}}" style="margin-top: 12px">
+<article class="rv-card glass" style="padding: 16px; border-radius: 34px; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 5; border-radius: 26px; overflow: hidden; background: #E6DEFF">
+<img src="./assets/2e63c43051649412d6d5a474168b972e.webp" alt="소울 상담사 사진" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block">
+<span class="chip" style="position: absolute; top: 14px; left: 14px; font-size: 13px; padding: 5px 12px; color: #B0569A">🔮 TAROT</span>
+</div>
+<div style="padding: 20px 8px 6px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div>
+<p class="logo" style="margin: 0; font-size: 12px; color: #B0569A">NOW TRACK · TAROT COUNSELOR</p>
+<h3 class="disp" style="margin: 2px 0 0; font-size: 26px">소울 <span class="logo" style="font-size: 15px; color: #8874F5; letter-spacing: .06em">SOUL</span></h3>
+<p style="margin: 6px 0 0; font-size: 16px; color: #4B4785">마음의 흐름을 읽고, 당신의 선택에 따뜻한 방향을 더해드립니다.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#매력운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#선택운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#학업운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#진로운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#인간관계운</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #29265A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B0569A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"></path></svg><strong>타로 심리상담사 1급</strong><span style="color: #6B67A0">외 4건</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 5px"><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">연애운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">재회운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">상대방 속마음</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">인간관계</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">직장운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">금전운</span></div>
+<details class="cprof">
+<summary>경력 · 자격 자세히 보기<span class="plus" style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #EFEAFF; transition: transform .3s ease"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="body">
+<div><h4 style="color: #B0569A">경력</h4><p style="margin: 0">다양한 고민과 관계의 흐름을 함께 살피는 맞춤형 타로 상담</p></div>
+<div><h4 style="color: #B0569A">자격 및 교육 수료</h4><ul><li>타로 심리상담사 1급</li><li>유니버셜 웨이트 타로 전문가 과정 수료</li><li>타로 카드 상징 및 해석 전문가 과정 수료</li><li>심리상담 기초 및 상담 기법 교육 수료</li><li>연애·재회 타로 리딩 심화 과정 수료</li></ul></div>
+</div>
+</details>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 16px; border-radius: 34px; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 5; border-radius: 26px; overflow: hidden; background: #E6DEFF">
+<img src="./assets/2326016e9b5c09c58be395fadb220800.webp" alt="미래 상담사 사진" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block">
+<span class="chip" style="position: absolute; top: 14px; left: 14px; font-size: 13px; padding: 5px 12px; color: #B0569A">🔮 TAROT</span>
+</div>
+<div style="padding: 20px 8px 6px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div>
+<p class="logo" style="margin: 0; font-size: 12px; color: #B0569A">NOW TRACK · TAROT COUNSELOR</p>
+<h3 class="disp" style="margin: 2px 0 0; font-size: 26px">미래 <span class="logo" style="font-size: 15px; color: #8874F5; letter-spacing: .06em">MIRAE</span></h3>
+<p style="margin: 6px 0 0; font-size: 16px; color: #4B4785">카드 속 흐름을 섬세하게 읽고, 고민의 방향을 명확하게 짚어드립니다.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#속마음</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#직장운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#인간관계운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#올해의운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #B0569A; border-color: #F5D9F0">#현실조언</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #29265A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B0569A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"></path></svg><strong>타로 상담사 1급</strong><span style="color: #6B67A0">외 4건</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 5px"><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">연애</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">재회</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">속마음</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">인간관계</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">직장운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #F5D9F0; color: #29265A">금전운</span></div>
+<details class="cprof">
+<summary>경력 · 자격 자세히 보기<span class="plus" style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #EFEAFF; transition: transform .3s ease"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="body">
+<div><h4 style="color: #B0569A">경력</h4><p style="margin: 0">다양한 상황과 고민에 맞춘 개인별 타로 리딩</p></div>
+<div><h4 style="color: #B0569A">자격 및 교육 수료</h4><ul><li>타로 상담사 1급</li><li>타로 심리상담 전문가 과정 수료</li><li>마르세유 타로 해석 과정 수료</li><li>관계 심리 및 감정 분석 교육 수료</li><li>실전 타로 상담 및 리딩 전문가 과정 수료</li></ul></div>
+</div>
+</details>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 16px; border-radius: 34px; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 5; border-radius: 26px; overflow: hidden; background: #E6DEFF">
+<img src="./assets/7af60220cc8d22f69060611a3b60a3ad.webp" alt="서윤 상담사 사진" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block">
+<span class="chip" style="position: absolute; top: 14px; left: 14px; font-size: 13px; padding: 5px 12px; color: #3E6CC4">🌙 SAJU</span>
+</div>
+<div style="padding: 20px 8px 6px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div>
+<p class="logo" style="margin: 0; font-size: 12px; color: #3E6CC4">FLOW TRACK · SAJU COUNSELOR</p>
+<h3 class="disp" style="margin: 2px 0 0; font-size: 26px">서윤 <span class="logo" style="font-size: 15px; color: #8874F5; letter-spacing: .06em">SEOYUN</span></h3>
+<p style="margin: 6px 0 0; font-size: 16px; color: #4B4785">타고난 운의 흐름을 이해하고, 삶의 방향을 함께 찾아드립니다.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#사주풀이</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#운세분석</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#인생운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#섬세한분석</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#현실적인조언</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #29265A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3E6CC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"></path></svg><strong>명리학 전문가 과정 수료</strong><span style="color: #6B67A0">외 4건</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 5px"><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">종합운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">연애운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">결혼운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">재물운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">직장운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">사업운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">대운 및 세운</span></div>
+<details class="cprof">
+<summary>경력 · 자격 자세히 보기<span class="plus" style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #EFEAFF; transition: transform .3s ease"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="body">
+<div><h4 style="color: #3E6CC4">경력</h4><p style="margin: 0">개인의 사주와 운의 흐름을 바탕으로 한 맞춤형 상담</p></div>
+<div><h4 style="color: #3E6CC4">자격 및 교육 수료</h4><ul><li>명리학 전문가 과정 수료</li><li>사주명리학 기초·심화 과정 수료</li><li>천간·지지 및 음양오행 이론 교육 수료</li><li>십신 및 격국 분석 과정 수료</li><li>대운·세운 운세 분석 과정 수료</li></ul></div>
+</div>
+</details>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 16px; border-radius: 34px; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 5; border-radius: 26px; overflow: hidden; background: #E6DEFF">
+<img src="./assets/8de94a659e7a929d1f34808d4d62d763.webp" alt="현우 상담사 사진" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block">
+<span class="chip" style="position: absolute; top: 14px; left: 14px; font-size: 13px; padding: 5px 12px; color: #3E6CC4">🌙 SAJU</span>
+</div>
+<div style="padding: 20px 8px 6px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<div>
+<p class="logo" style="margin: 0; font-size: 12px; color: #3E6CC4">FLOW TRACK · SAJU COUNSELOR</p>
+<h3 class="disp" style="margin: 2px 0 0; font-size: 26px">현우 <span class="logo" style="font-size: 15px; color: #8874F5; letter-spacing: .06em">HYUNWOO</span></h3>
+<p style="margin: 6px 0 0; font-size: 16px; color: #4B4785">사주의 원리를 깊이 있게 분석해 인생의 흐름과 가능성을 안내합니다.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#사주명리</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#재물운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#직업운</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#정확한분석</span>
+<span class="chip" style="font-size: 13px; padding: 5px 12px; color: #3E6CC4; border-color: #BBD9FF">#체계적인풀이</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #29265A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3E6CC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"></path></svg><strong>사주명리학 기초·심화 과정 수료</strong><span style="color: #6B67A0">외 5건</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 5px"><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">종합운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">재물운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">사업운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">직장운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">결혼운</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">궁합</span><span style="font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #DCEBFF; color: #29265A">대운 및 세운</span></div>
+<details class="cprof">
+<summary>경력 · 자격 자세히 보기<span class="plus" style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #EFEAFF; transition: transform .3s ease"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="body">
+<div><h4 style="color: #3E6CC4">경력</h4><p style="margin: 0">개인의 사주 구조와 시기별 운세 흐름을 살펴보는 맞춤 상담</p></div>
+<div><h4 style="color: #3E6CC4">자격 및 교육 수료</h4><ul><li>사주명리학 기초·심화 과정 수료</li><li>사주명리학 실전 해석 과정 수료</li><li>십신·십이운성 및 격국 분석 교육 수료</li><li>대운·세운 및 연운 분석 교육 수료</li><li>궁합 및 인간관계 명리 상담 교육 수료</li><li>사주명리 상담 실무 과정 수료</li></ul></div>
+</div>
+</details>
+</div>
+</article>
+</div>
+<p style="margin: 0; text-align: center; font-size: 14px; color: #6B67A0">← 옆으로 넘겨서 상담사 더 보기 →</p>
+</div>
+</section>
+
+<!-- ================= PRICE ================= -->
+<section id="price" style="padding: 24px 20px 72px; scroll-margin-top: 90px">
+<div class="reveal" style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+<span class="chip">PRICE · 상담 이용 요금</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.25">상담 이용 요금 안내</h2>
+</div>
+<div style="max-width: 1140px; margin: 40px auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; align-items: stretch">
+<article class="glass lift reveal" style="padding: 28px 26px 18px; border-radius: 32px; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+<span style="width: 52px; height: 52px; border-radius: 18px; background: #F5D9F0; display: flex; align-items: center; justify-content: center; font-size: 26px">🔮</span>
+<div><p class="logo" style="margin: 0; font-size: 13px; color: #B0569A">NOW TRACK</p><p class="disp" style="margin: 0; font-size: 22px">타로 상담</p></div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1.5px dashed #E2DAFF"><span class="logo" style="min-width: 54px; font-size: 14px; color: #6B67A0">20분</span><span class="disp" style="font-size: 17px; flex-grow: 1">기본 상담</span><span class="logo" style="font-size: 20px; letter-spacing: .01em; white-space: nowrap">30,000<span class="disp" style="font-size: 14px; margin-left: 2px">원</span></span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1.5px dashed #E2DAFF"><span class="logo" style="min-width: 54px; font-size: 14px; color: #6B67A0">30분</span><span class="disp" style="font-size: 17px; flex-grow: 1">집중 상담</span><span class="logo" style="font-size: 20px; letter-spacing: .01em; white-space: nowrap">40,000<span class="disp" style="font-size: 14px; margin-left: 2px">원</span></span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1.5px dashed #E2DAFF"><span class="logo" style="min-width: 54px; font-size: 14px; color: #6B67A0">60분</span><span class="disp" style="font-size: 17px; flex-grow: 1">심층 상담</span><span class="logo" style="font-size: 20px; letter-spacing: .01em; white-space: nowrap">70,000<span class="disp" style="font-size: 14px; margin-left: 2px">원</span></span></div>
+</article>
+<article class="glass lift reveal" style="padding: 28px 26px 18px; border-radius: 32px; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+<span style="width: 52px; height: 52px; border-radius: 18px; background: #DCEBFF; display: flex; align-items: center; justify-content: center; font-size: 26px">🌙</span>
+<div><p class="logo" style="margin: 0; font-size: 13px; color: #3E6CC4">FLOW TRACK</p><p class="disp" style="margin: 0; font-size: 22px">사주 상담</p></div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1.5px dashed #E2DAFF"><span class="logo" style="min-width: 54px; font-size: 14px; color: #6B67A0">30분</span><span class="disp" style="font-size: 17px; flex-grow: 1">기본 상담</span><span class="logo" style="font-size: 20px; letter-spacing: .01em; white-space: nowrap">50,000<span class="disp" style="font-size: 14px; margin-left: 2px">원</span></span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1.5px dashed #E2DAFF"><span class="logo" style="min-width: 54px; font-size: 14px; color: #6B67A0">60분</span><span class="disp" style="font-size: 17px; flex-grow: 1">종합 상담</span><span class="logo" style="font-size: 20px; letter-spacing: .01em; white-space: nowrap">80,000<span class="disp" style="font-size: 14px; margin-left: 2px">원</span></span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1.5px dashed #E2DAFF"><span class="logo" style="min-width: 54px; font-size: 14px; color: #6B67A0">60분</span><span class="disp" style="font-size: 17px; flex-grow: 1">궁합 상담</span><span class="logo" style="font-size: 20px; letter-spacing: .01em; white-space: nowrap">100,000<span class="disp" style="font-size: 14px; margin-left: 2px">원</span></span></div>
+</article>
+<article class="lift reveal" style="padding: 28px 26px 18px; border-radius: 32px; display: flex; flex-direction: column; background: linear-gradient(150deg, #29265A, #4A3E9E 60%, #6B6BD8); color: #FFFFFF; box-shadow: 0 22px 50px rgba(41,38,90,.35); position: relative; overflow: hidden">
+<svg class="twinkle" aria-hidden="true" style="position: absolute; right: 22px; top: 22px" width="26" height="26" viewBox="0 0 24 24"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="#FFE38A"></path></svg>
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+<span style="width: 52px; height: 52px; border-radius: 18px; background: rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center; font-size: 26px">✨</span>
+<div><p class="logo" style="margin: 0; font-size: 13px; color: #FFE38A">SPECIAL</p><p class="disp" style="margin: 0; font-size: 22px">프리미엄 상담</p></div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1.5px dashed rgba(255,255,255,.18)"><span class="logo" style="min-width: 54px; font-size: 14px; color: #C5B7FF">60분</span><span class="disp" style="font-size: 17px; flex-grow: 1">타로 + 사주</span><span class="logo" style="font-size: 20px; letter-spacing: .01em; white-space: nowrap">90,000<span class="disp" style="font-size: 14px; margin-left: 2px">원</span></span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1.5px dashed rgba(255,255,255,.18)"><span class="logo" style="min-width: 54px; font-size: 14px; color: #C5B7FF">90분</span><span class="disp" style="font-size: 17px; flex-grow: 1">타로 + 사주</span><span class="logo" style="font-size: 20px; letter-spacing: .01em; white-space: nowrap">130,000<span class="disp" style="font-size: 14px; margin-left: 2px">원</span></span></div>
+</article>
+</div>
+<div class="reveal" style="max-width: 1140px; margin: 26px auto 0; padding: 18px 22px; border-radius: 22px; background: rgba(255,255,255,.7); display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: #4B4785">
+<p style="margin: 0">※ 마이트랙 성향검사는 모든 상담 요금에 포함되어 있습니다.</p>
+<p style="margin: 0">※ 모든 상담은 사전 예약제로 운영됩니다.</p>
+<p style="margin: 0">※ 대면 상담은 예약 확정 후 지정된 장소에서 진행됩니다.</p>
+<p style="margin: 0">※ 비대면(온라인·전화) 상담은 진행하지 않습니다.</p>
+<p style="margin: 0">※ 상담 시간 및 추가 상담은 별도 문의 바랍니다.</p>
+</div>
+<!-- ================= POLICY ================= -->
+<div id="policy" style="max-width: 860px; margin: 56px auto 0; scroll-margin-top: 100px">
+<div class="reveal" style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<span class="chip">POLICY · 예약 규정</span>
+<h3 class="disp" style="margin: 0; font-size: clamp(24px, 3.2vw, 32px)">예약 변경 · 취소 · 환불 안내</h3>
+<p style="margin: 0; font-size: 16px; color: #4B4785">원활한 상담 진행을 위해 예약 및 취소 규정을 안내드립니다.</p>
+</div>
+<div class="reveal" style="margin-top: 24px; display: flex; flex-direction: column; gap: 10px">
+<details class="faq">
+<summary><span class="q" style="font-size: 18px">📅</span><span class="disp" style="font-size: 18px"><span class="logo" style="color: #8874F5; margin-right: 6px">1.</span>예약 안내</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a"><ul style="margin: 0; padding-left: 18px"><li style="margin: 0 0 6px">모든 상담은 사전 예약제로 운영됩니다.</li><li style="margin: 0 0 6px">예약 시 상담 날짜와 시간을 정확히 확인해 주세요.</li><li style="margin: 0 0 6px">별도의 예약금은 없으며, 예약 확정 안내를 받으시면 예약이 완료됩니다.</li><li style="margin: 0 0 6px">예약 시간보다 5~10분 일찍 도착해 주시면 감사하겠습니다.</li></ul></div>
+</details>
+<details class="faq">
+<summary><span class="q" style="font-size: 18px">🔄</span><span class="disp" style="font-size: 18px"><span class="logo" style="color: #8874F5; margin-right: 6px">2.</span>예약 변경</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a"><ul style="margin: 0; padding-left: 18px"><li style="margin: 0 0 6px">예약 변경은 상담 예정일 하루 전까지 요청해 주세요.</li><li style="margin: 0 0 6px">당일 변경은 상담 일정에 따라 어려울 수 있습니다.</li><li style="margin: 0 0 6px">변경을 원하실 경우 전화 또는 메시지로 연락해 주세요.</li><li style="margin: 0 0 6px">반복적인 예약 변경은 제한될 수 있습니다.</li></ul></div>
+</details>
+<details class="faq">
+<summary><span class="q" style="font-size: 18px">✋</span><span class="disp" style="font-size: 18px"><span class="logo" style="color: #8874F5; margin-right: 6px">3.</span>예약 취소</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a"><ul style="margin: 0; padding-left: 18px"><li style="margin: 0 0 6px">상담 취소는 가능한 한 빠르게 연락해 주세요.</li><li style="margin: 0 0 6px">상담 예정일 하루 전까지 취소하시면 전액 환불해 드립니다.</li><li style="margin: 0 0 6px">상담 당일 취소 또는 사전 연락 없는 미방문은 환불이 제한될 수 있습니다.</li></ul></div>
+</details>
+<details class="faq">
+<summary><span class="q" style="font-size: 18px">💳</span><span class="disp" style="font-size: 18px"><span class="logo" style="color: #8874F5; margin-right: 6px">4.</span>환불 안내</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a"><ul style="margin: 0; padding-left: 18px"><li style="margin: 0 0 6px">상담 시작 전 취소 시에는 취소 시점과 예약 조건에 따라 환불해 드립니다.</li><li style="margin: 0 0 6px">상담이 시작된 이후에는 이미 제공된 상담 시간 및 서비스에 해당하는 금액을 제외하고 환불 여부를 안내해 드립니다.</li><li style="margin: 0 0 6px">환불은 결제 수단 및 처리 절차에 따라 영업일 기준 3~7일 정도 소요될 수 있습니다.</li><li style="margin: 0 0 6px">별도 프로모션 및 할인 상품은 상품별 환불 조건이 적용될 수 있습니다.</li></ul></div>
+</details>
+<details class="faq">
+<summary><span class="q" style="font-size: 18px">⏰</span><span class="disp" style="font-size: 18px"><span class="logo" style="color: #8874F5; margin-right: 6px">5.</span>상담 지각 및 노쇼 안내</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a"><ul style="margin: 0; padding-left: 18px"><li style="margin: 0 0 6px">예약 시간에 늦으실 경우 실제 상담 가능 시간이 줄어들 수 있습니다.</li><li style="margin: 0 0 6px">사전 연락 없이 방문하지 않으신 경우 노쇼로 처리될 수 있으며, 환불이 제한될 수 있습니다.</li></ul></div>
+</details>
+</div>
+<p class="reveal" style="margin: 20px 0 0; text-align: center; font-size: 15px; color: #5A4FC4">고객님의 소중한 시간을 위해 예약 시간을 꼭 지켜주시기 바랍니다. 감사합니다. 💜</p>
+</div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews" style="padding: 72px 20px 96px; scroll-margin-top: 90px">
+<div style="max-width: 1200px; margin: 0 auto">
+<div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span class="chip" style="align-self: flex-start">REVIEW · 상담 후기</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.25">먼저 다녀간 분들의 이야기 💌</h2>
+</div>
+<div style="display: flex; gap: 10px">
+<button type="button" class="arrow-btn" aria-label="이전 후기" onClick="{{prevReview}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+<button type="button" class="arrow-btn" aria-label="다음 후기" onClick="{{nextReview}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+</div>
+</div>
+<div class="rv-track" ref="{{setTrack}}" style="margin-top: 28px">
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #F5D9F0; color: #8A3F75; font-family: 'Jua', sans-serif; white-space: nowrap">NOW TRACK · 나우트랙 타로</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">진로 고민이 조금씩 정리됐어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">졸업을 앞두고 취업을 해야 할지 대학원에 진학해야 할지 고민이 많았어요. 처음에는 타로만 보는 줄 알았는데 성향검사를 먼저 진행해서 신기했습니다.</p>
+<p style="margin: 0">검사 결과를 보면서 제가 어떤 성향이고 어떤 일을 할 때 장점을 발휘하는지 알게 됐어요. 이후 타로 상담을 받으니 제 성향과 진로 고민을 연결해서 설명해 주셔서 훨씬 와닿았습니다.</p>
+<p style="margin: 0">막연하게 불안했던 미래를 조금 더 구체적으로 생각해 볼 수 있어서 좋았어요.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #F5D9F0, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#8A3F75" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">22세 · 대학생</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #F5D9F0; color: #8A3F75; font-family: 'Jua', sans-serif; white-space: nowrap">NOW TRACK · 나우트랙 타로</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">연애 고민뿐 아니라 제 마음을 알게 됐어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">연애 문제로 친구들에게 고민 상담을 많이 했는데 답답한 마음이 해결되지 않아 방문했어요.</p>
+<p style="margin: 0">가장 좋았던 건 타로를 보기 전에 성향검사를 한다는 점이었어요. 제가 연애할 때 어떤 성향인지, 상대방에게 어떤 부분을 기대하는지 먼저 알아보니까 평소 제 행동도 이해가 되더라고요.</p>
+<p style="margin: 0">타로 상담까지 이어지니 단순히 상대방의 마음을 궁금해하는 것에서 벗어나 제가 어떤 관계를 원하는지 생각하게 됐어요.</p>
+<p style="margin: 0">생각보다 얻어가는 게 많았던 시간이었습니다!</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #F5D9F0, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#8A3F75" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">21세 · 대학생</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #F5D9F0; color: #8A3F75; font-family: 'Jua', sans-serif; white-space: nowrap">NOW TRACK · 나우트랙 타로</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">저도 몰랐던 제 성향을 발견했어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">평소에 결정을 잘 못 하는 편이라 진로부터 인간관계까지 고민이 정말 많았어요.</p>
+<p style="margin: 0">성향검사를 먼저 해보니 제가 어떤 상황에서 고민이 많아지고 결정을 미루는지 돌아볼 수 있었어요. 그다음 타로 상담을 진행하면서 현재 고민을 구체적으로 이야기할 수 있어서 좋았습니다.</p>
+<p style="margin: 0">다른 타로 상담과 달리 제 성향을 먼저 알고 상담해 주니까 설명도 더 잘 이해됐어요.</p>
+<p style="margin: 0">앞으로 중요한 선택을 할 때 제 성향과 장점을 잘 활용해 봐야겠다는 생각이 들었습니다.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #F5D9F0, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#8A3F75" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">24세 · 대학생</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #DCEBFF; color: #2E5AA8; font-family: 'Jua', sans-serif; white-space: nowrap">FLOW TRACK · 플로우트랙 사주</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">제 타고난 기질을 이해하는 시간이었어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">친구 추천으로 사주를 보러 갔는데 성향검사부터 진행해서 처음에는 조금 의아했어요.</p>
+<p style="margin: 0">그런데 검사 결과를 통해 현재 제 성격과 행동 패턴을 먼저 알아보고 사주 풀이를 들으니까 타고난 기질과 현재 모습에 대해 비교하면서 생각해 볼 수 있더라고요.</p>
+<p style="margin: 0">특히 제가 가진 장점과 앞으로 보완하면 좋을 부분을 함께 이야기해 주셔서 좋았어요.</p>
+<p style="margin: 0">단순히 운세를 듣는 것보다 저 자신을 알아가는 느낌이라 만족스러웠습니다.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #DCEBFF, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#2E5AA8" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">23세 · 대학생</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #DCEBFF; color: #2E5AA8; font-family: 'Jua', sans-serif; white-space: nowrap">FLOW TRACK · 플로우트랙 사주</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">취업 준비 전에 제 강점부터 알게 됐어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">취업 준비를 시작하면서 제가 어떤 일을 잘할 수 있을지 고민이 많았어요. 사주를 보러 왔는데 성향검사까지 함께 진행해서 더 특별하게 느껴졌습니다.</p>
+<p style="margin: 0">검사로 제 성향과 강점을 먼저 확인하고 사주를 통해 타고난 기질과 삶의 흐름을 살펴보니까 앞으로 진로를 선택할 때 어떤 점을 고려하면 좋을지 생각할 수 있었어요.</p>
+<p style="margin: 0">막연하게 남들과 비교하면서 불안해하기보다 제 장점을 살리는 방향으로 준비해야겠다는 생각이 들었습니다.</p>
+<p style="margin: 0">대학생이나 취업 준비생에게 추천하고 싶어요!</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #DCEBFF, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#2E5AA8" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">25세 · 취업 준비생</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #DCEBFF; color: #2E5AA8; font-family: 'Jua', sans-serif; white-space: nowrap">FLOW TRACK · 플로우트랙 사주</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">미래가 궁금해서 갔다가 나를 더 알게 됐어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">원래 사주에 관심이 많아서 방문했는데 포츈트랙은 상담 방식이 조금 다르더라고요.</p>
+<p style="margin: 0">먼저 성향검사를 통해 제 성격과 생각하는 방식을 알아보고 사주 상담을 진행했어요.</p>
+<p style="margin: 0">사주에서 이야기하는 타고난 기질과 검사에서 나온 현재의 성향을 함께 살펴보니까 저를 여러 관점에서 이해할 수 있어서 좋았습니다.</p>
+<p style="margin: 0">미래에 대한 이야기도 좋았지만, 무엇보다 지금의 저를 이해하고 앞으로 어떤 방향으로 성장하면 좋을지 생각해 볼 수 있었던 점이 가장 기억에 남아요.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #DCEBFF, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#2E5AA8" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">22세 · 대학생</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #F5D9F0; color: #8A3F75; font-family: 'Jua', sans-serif; white-space: nowrap">NOW TRACK · 나우트랙 타로</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">막연했던 고민이 정리됐어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">처음에는 타로만 보는 곳인 줄 알았는데, 성향검사를 먼저 한다는 점이 신기했어요. 검사 결과를 통해 제가 어떤 성향이고 어떤 상황에서 고민이 많아지는지 알게 됐어요.</p>
+<p style="margin: 0">그다음 타로 상담을 진행하니 단순히 카드의 의미만 설명해 주는 게 아니라 제 성향과 현재 상황을 연결해서 이야기해 주셔서 훨씬 이해가 잘됐어요.</p>
+<p style="margin: 0">특히 제가 왜 같은 고민을 반복하는지 생각해 보는 계기가 됐습니다. 다른 곳과는 상담 방식이 확실히 다른 것 같아요.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #F5D9F0, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#8A3F75" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">30대 직장인 · 여성</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #F5D9F0; color: #8A3F75; font-family: 'Jua', sans-serif; white-space: nowrap">NOW TRACK · 나우트랙 타로</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">제 성격을 알고 타로를 보니 달랐어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">평소 타로를 몇 번 봤지만 이번 상담은 조금 특별했어요. 먼저 성향검사를 통해 제 성격과 생각하는 방식을 알아보고 상담을 시작하니까 카드 해석을 받아들이는 느낌부터 달랐어요.</p>
+<p style="margin: 0">특히 인간관계 문제로 고민이 많았는데, 제가 상대방의 말과 행동에 어떻게 반응하는지 짚어보면서 타로 상담을 진행해 주셨어요.</p>
+<p style="margin: 0">미래가 어떻게 될지만 듣는 것보다 제가 어떤 선택을 해야 할지 생각할 수 있어서 더 도움이 됐습니다. 다음에도 고민이 생기면 다시 방문하고 싶어요.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #F5D9F0, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#8A3F75" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">20대 직장인 · 여성</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #F5D9F0; color: #8A3F75; font-family: 'Jua', sans-serif; white-space: nowrap">NOW TRACK · 나우트랙 타로</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">단순한 점이 아니라 나를 알아가는 시간</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">요즘 진로 문제 때문에 생각이 많아서 방문했어요. 성향검사부터 진행하고 타로를 보는데, 제가 어떤 부분에 강점이 있고 어떤 상황에서 결정을 어려워하는지 먼저 알 수 있어서 좋았어요.</p>
+<p style="margin: 0">타로 결과도 제 성향과 연결해서 설명해 주시니 막연했던 고민이 조금씩 구체적으로 정리되더라고요.</p>
+<p style="margin: 0">무엇보다 무조건 잘될 거라는 이야기보다 현재 상황을 객관적으로 돌아보고 제가 할 수 있는 선택을 생각하게 해준 점이 좋았습니다. 상담을 받고 나니 마음이 한결 가벼워졌어요.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #F5D9F0, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#8A3F75" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">30대 직장인 · 남성</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #DCEBFF; color: #2E5AA8; font-family: 'Jua', sans-serif; white-space: nowrap">FLOW TRACK · 플로우트랙 사주</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">사주를 이렇게 입체적으로 볼 수 있네요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">평소 사주에 관심이 많아서 여러 곳에서 상담을 받아봤는데 포츈트랙은 진행 방식이 달라서 기억에 남아요.</p>
+<p style="margin: 0">사주를 보기 전에 성향검사를 통해 제 기질과 성격을 먼저 살펴보는데, 이후 사주 풀이를 들으면서 두 가지 내용을 비교해 볼 수 있다는 점이 좋았어요.</p>
+<p style="margin: 0">단순히 사주에 이런 운이 있다고 설명하는 것이 아니라 제가 실제로 어떤 성향을 가지고 있고, 그것을 어떻게 활용하면 좋을지 생각해 볼 수 있었어요.</p>
+<p style="margin: 0">나 자신을 더 깊이 이해하는 시간이었습니다.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #DCEBFF, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#2E5AA8" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">40대 직장인 · 여성</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #DCEBFF; color: #2E5AA8; font-family: 'Jua', sans-serif; white-space: nowrap">FLOW TRACK · 플로우트랙 사주</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">제 강점과 부족한 부분을 알게 됐어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">요즘 이직과 앞으로의 진로 때문에 고민이 많았어요. 사주 상담을 받으러 갔는데 먼저 성향검사를 진행해서 조금 의외였어요.</p>
+<p style="margin: 0">그런데 검사 결과를 먼저 듣고 사주 풀이를 이어가니 제가 평소 어떤 방식으로 판단하고 행동하는지 이해하는 데 도움이 되더라고요.</p>
+<p style="margin: 0">특히 타고난 기질과 현재 제 성향을 함께 살펴보면서 앞으로 어떤 부분을 발전시키면 좋을지 생각할 수 있었어요.</p>
+<p style="margin: 0">운세만 듣고 끝나는 게 아니라 실제 제 삶에 적용할 수 있는 이야기를 들을 수 있어서 만족스러웠습니다.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #DCEBFF, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#2E5AA8" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">30대 직장인 · 남성</span>
+</div>
+</article>
+<article class="rv-card glass" style="padding: 26px 24px; border-radius: 30px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span aria-label="별점 5점" style="color: #F5B94E; font-size: 17px; letter-spacing: 2px">★★★★★</span>
+<span style="font-size: 12px; padding: 4px 12px; border-radius: 99px; background: #DCEBFF; color: #2E5AA8; font-family: 'Jua', sans-serif; white-space: nowrap">FLOW TRACK · 플로우트랙 사주</span>
+</div>
+<h3 class="disp" style="margin: 0; font-size: 20px; line-height: 1.4">과거와 현재, 앞으로의 방향을 생각하게 됐어요</h3>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; color: #4B4785; flex-grow: 1">
+<p style="margin: 0">사주 상담은 태어난 날짜와 시간으로만 풀이하는 줄 알았는데, 이곳은 성향검사부터 시작해서 조금 더 체계적으로 느껴졌어요.</p>
+<p style="margin: 0">먼저 제 성격과 심리적인 특성을 확인하고 사주를 통해 타고난 기질과 삶의 흐름을 살펴보니 저 자신을 여러 방향에서 이해할 수 있었어요.</p>
+<p style="margin: 0">특히 제가 가진 장점은 무엇인지, 앞으로 어떤 부분을 조심하고 보완하면 좋을지 정리할 수 있었던 게 가장 좋았습니다.</p>
+<p style="margin: 0">단순히 미래를 맞히는 상담이 아니라 앞으로의 삶을 주도적으로 준비하는 데 도움이 되는 시간이었어요.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1.5px dashed #E2DAFF">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #DCEBFF, #FFFFFF); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#2E5AA8" opacity=".55"></path></svg></span>
+<span style="font-size: 14px; color: #6B67A0">40대 자영업 · 여성</span>
+</div>
+</article>
+</div>
+<p style="margin: 0; text-align: center; font-size: 14px; color: #6B67A0">← 옆으로 넘겨서 후기 12개 모두 보기 →</p>
+</div>
+</section>
+
+<!-- ================= PART 05 SHOP ================= -->
+<section id="shop" style="padding: 96px 20px; scroll-margin-top: 90px">
+<div class="reveal" style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
+<span class="chip">FORTUNE SHOP</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(30px, 4.4vw, 50px); line-height: 1.25">행운도 귀엽게 챙기자! 🍀</h2>
+<p style="margin: 0; font-size: 18px; color: #4B4785">좋은 기운은 가까이, 나쁜 기운은 멀리!<br>나를 위한 작은 행운을 만나보세요.</p>
+<p style="margin: 4px 0 0; font-size: 16px; color: #29265A">모든 소품은 <strong class="disp" style="font-weight: 400; color: #5A4FC4">포츈트랙 네이버 스마트스토어</strong>에서 구매할 수 있어요.</p>
+<a href="#contact" class="btn btn-main" style="min-height: 50px; font-size: 16px; background: linear-gradient(135deg, #03C75A, #2BD27A); box-shadow: 0 10px 26px rgba(3,199,90,.35)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h16l-1.2 10.2a1 1 0 0 1-1 .8H6.2a1 1 0 0 1-1-.8z"></path><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"></path></svg>스마트스토어에서 구매하기</a>
+<span class="ready">스마트스토어 링크 연결 준비 중</span>
+</div>
+
+<div style="max-width: 1200px; margin: 36px auto 0">
+<div style="display: flex; justify-content: flex-end; gap: 10px">
+<button type="button" class="arrow-btn" aria-label="이전 상품" onClick="{{prevProduct}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+<button type="button" class="arrow-btn" aria-label="다음 상품" onClick="{{nextProduct}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+</div>
+<div class="rv-track" ref="{{setPTrack}}" style="margin-top: 12px">
+<!-- product: Stone Doggy keyring -->
+<article class="rv-card glass" style="padding: 14px; border-radius: 30px; flex-basis: clamp(240px, 23%, 290px)">
+<div style="aspect-ratio: 1 / 1; border-radius: 22px; overflow: hidden; background: #F3F1F6">
+<img src="./assets/fd977c3e42110b25fd2b23f1b743a0cc.webp" alt="Stone Doggy keyring" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</div>
+<div style="padding: 16px 8px 8px; display: flex; flex-direction: column; gap: 10px">
+<div><h3 class="logo" style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: .01em; line-height: 1.35">Stone Doggy keyring</h3><p class="disp" style="margin: 4px 0 0; font-size: 16px; color: #5A4FC4">원석 댕댕 키링</p></div>
+<span class="chip" style="align-self: flex-start; font-size: 12px; padding: 3px 10px">스마트스토어 구매</span>
+</div>
+</article>
+<!-- product: Stone Doggy ring -->
+<article class="rv-card glass" style="padding: 14px; border-radius: 30px; flex-basis: clamp(240px, 23%, 290px)">
+<div style="aspect-ratio: 1 / 1; border-radius: 22px; overflow: hidden; background: #F3F1F6">
+<img src="./assets/5328b76c585e7993d4f09b84ac02c9c1.webp" alt="Stone Doggy ring" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</div>
+<div style="padding: 16px 8px 8px; display: flex; flex-direction: column; gap: 10px">
+<div><h3 class="logo" style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: .01em; line-height: 1.35">Stone Doggy ring</h3><p class="disp" style="margin: 4px 0 0; font-size: 16px; color: #5A4FC4">원석 댕댕 반지</p></div>
+<span class="chip" style="align-self: flex-start; font-size: 12px; padding: 3px 10px">스마트스토어 구매</span>
+</div>
+</article>
+<!-- product: LUCKY PEBBLE – GEMSTONE CROCHET KEYRING -->
+<article class="rv-card glass" style="padding: 14px; border-radius: 30px; flex-basis: clamp(240px, 23%, 290px)">
+<div style="aspect-ratio: 1 / 1; border-radius: 22px; overflow: hidden; background: #F3F1F6">
+<img src="./assets/4f59f61bf021c8218b0f0c0f15c2e519.webp" alt="LUCKY PEBBLE – GEMSTONE CROCHET KEYRING" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</div>
+<div style="padding: 16px 8px 8px; display: flex; flex-direction: column; gap: 10px">
+<div><h3 class="logo" style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: .01em; line-height: 1.35">LUCKY PEBBLE – GEMSTONE CROCHET KEYRING</h3><p class="disp" style="margin: 4px 0 0; font-size: 16px; color: #5A4FC4">포춘쿠키 키링</p></div>
+<span class="chip" style="align-self: flex-start; font-size: 12px; padding: 3px 10px">스마트스토어 구매</span>
+</div>
+</article>
+<!-- product: 12 ZODIAC FRIENDS KEYRING -->
+<article class="rv-card glass" style="padding: 14px; border-radius: 30px; flex-basis: clamp(240px, 23%, 290px)">
+<div style="aspect-ratio: 1 / 1; border-radius: 22px; overflow: hidden; background: #FFFFFF">
+<img src="./assets/954eaf890737aff1131d0eb85c1b8258.webp" alt="12 ZODIAC FRIENDS KEYRING" style="width: 100%; height: 100%; object-fit: contain; display: block">
+</div>
+<div style="padding: 16px 8px 8px; display: flex; flex-direction: column; gap: 10px">
+<div><h3 class="logo" style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: .01em; line-height: 1.35">12 ZODIAC FRIENDS KEYRING</h3><p class="disp" style="margin: 4px 0 0; font-size: 16px; color: #5A4FC4">12띠 친구들 키링</p></div>
+<span class="chip" style="align-self: flex-start; font-size: 12px; padding: 3px 10px">스마트스토어 구매</span>
+</div>
+</article>
+<!-- product: LUCKY LITTLE KNOT BRACELET -->
+<article class="rv-card glass" style="padding: 14px; border-radius: 30px; flex-basis: clamp(240px, 23%, 290px)">
+<div style="aspect-ratio: 1 / 1; border-radius: 22px; overflow: hidden; background: #F3F1F6">
+<img src="./assets/880622eda68bc357f8660dc2fb511df4.webp" alt="LUCKY LITTLE KNOT BRACELET" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</div>
+<div style="padding: 16px 8px 8px; display: flex; flex-direction: column; gap: 10px">
+<div><h3 class="logo" style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: .01em; line-height: 1.35">LUCKY LITTLE KNOT BRACELET</h3><p class="disp" style="margin: 4px 0 0; font-size: 16px; color: #5A4FC4">소원 매듭 팔찌</p></div>
+<span class="chip" style="align-self: flex-start; font-size: 12px; padding: 3px 10px">스마트스토어 구매</span>
+</div>
+</article>
+<!-- product: MY PET STONE – LITTLE GEM FRIENDS -->
+<article class="rv-card glass" style="padding: 14px; border-radius: 30px; flex-basis: clamp(240px, 23%, 290px)">
+<div style="aspect-ratio: 1 / 1; border-radius: 22px; overflow: hidden; background: #F3F1F6">
+<img src="./assets/b6f90addd070eb93325a210ef0617d38.webp" alt="MY PET STONE – LITTLE GEM FRIENDS" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</div>
+<div style="padding: 16px 8px 8px; display: flex; flex-direction: column; gap: 10px">
+<div><h3 class="logo" style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: .01em; line-height: 1.35">MY PET STONE – LITTLE GEM FRIENDS</h3><p class="disp" style="margin: 4px 0 0; font-size: 16px; color: #5A4FC4">나의 반려원석</p></div>
+<span class="chip" style="align-self: flex-start; font-size: 12px; padding: 3px 10px">스마트스토어 구매</span>
+</div>
+</article>
+</div>
+<p style="margin: 0; text-align: center; font-size: 14px; color: #6B67A0">← 옆으로 넘겨서 상품 더 보기 →</p>
+</div>
+</section>
+
+<!-- ================= Q&A ================= -->
+<section id="qna" style="padding: 96px 20px 24px; scroll-margin-top: 90px">
+<div class="reveal" style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px">
+<span class="chip">Q&amp;A · 자주 묻는 질문</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.25">궁금한 게 있나요? 💬</h2>
+<p style="margin: 0; font-size: 18px; color: #4B4785">포츈트랙에 대해 자주 물어보시는 이야기를 모았어요.</p>
+<span class="ready">분홍 점선 칸은 실제 운영 정보로 채워 주세요</span>
+</div>
+<div style="max-width: 860px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 12px">
+
+<details class="faq reveal" open="">
+<summary><span class="q">Q</span><span class="disp" style="font-size: 18px">타로·사주 상담 전에 성향 분석을 꼭 받아야 하나요?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a">네! 포츈트랙의 모든 타로·사주 상담은 성향 분석 결과를 바탕으로 진행돼요. 나를 먼저 이해해야 나의 운의 흐름도 더 잘 보이니까요.</div>
+</details>
+
+<details class="faq reveal">
+<summary><span class="q">Q</span><span class="disp" style="font-size: 18px">마이트랙 성향검사에서는 무엇을 알아보나요?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a">특별한 성향 분석 도구로 성격과 성향, 감정 패턴, 인간관계 스타일, 사고방식, 나의 강점과 가능성까지 자세히 살펴봐요. 이 결과가 타로·사주 상담의 바탕이 돼요.</div>
+</details>
+
+<details class="faq reveal">
+<summary><span class="q">Q</span><span class="disp" style="font-size: 18px">어떤 고민을 상담할 수 있나요?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a">연애운, 금전운, 직장운, 사업운, 인간관계, 진로와 방향까지! 성향 분석으로 이해한 나를 바탕으로 지금 나에게 필요한 이야기를 함께 찾아요.</div>
+</details>
+
+<details class="faq reveal">
+<summary><span class="q">Q</span><span class="disp" style="font-size: 18px">상담은 어떻게 신청하나요?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a">홈페이지의 <a href="#apply" style="color: #5A4FC4; font-weight: 700">상담 신청하기</a>에서 신청서를 작성해 주세요. 확인 후 예약 확정 안내를 드리고, 마이트랙 성향검사부터 차례로 진행돼요.</div>
+</details>
+
+<details class="faq reveal">
+<summary><span class="q">Q</span><span class="disp" style="font-size: 18px">비용과 소요 시간은 어떻게 되나요?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a">타로 상담은 20분 30,000원부터, 사주 상담은 30분 50,000원부터, 타로 + 사주 프리미엄 상담은 60분 90,000원부터예요. 자세한 내용은 <a href="#price" style="color: #5A4FC4; font-weight: 700">상담 이용 요금 안내</a>를 확인해 주세요. 모든 상담은 사전 예약제로 운영돼요.<br>마이트랙 성향검사는 상담 요금에 포함돼 있어요.</div>
+</details>
+
+<details class="faq reveal">
+<summary><span class="q">Q</span><span class="disp" style="font-size: 18px">상담은 온라인으로 하나요, 만나서 하나요?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a">타로·사주 상담은 <strong>서울역 · 사당역 · 강남역 인근 공용 오피스</strong>에서 대면으로 진행돼요. 상세 위치는 상담사님과 날짜에 따라 달라서, 예약하신 분께 개별로 안내해 드려요.<br>비대면(온라인·전화) 상담은 진행하지 않아요.<br>운영시간은 평일·토요일 오전 10:00 ~ 오후 10:00이고, 일요일과 공휴일은 휴무예요.</div>
+</details>
+
+<details class="faq reveal">
+<summary><span class="q">Q</span><span class="disp" style="font-size: 18px">행운 소품은 어디서 구매할 수 있나요?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a">포츈트랙의 행운 소품은 모두 <strong>포츈트랙 네이버 스마트스토어</strong>에서 구매할 수 있어요.</div>
+</details>
+
+<details class="faq reveal">
+<summary><span class="q">Q</span><span class="disp" style="font-size: 18px">예약 변경·취소와 환불은 어떻게 하나요?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A4FC4" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+<div class="a">상담 예약 변경·취소는 상담 예정일 하루 전까지 연락해 주세요. 하루 전까지 취소하시면 전액 환불해 드려요. 자세한 내용은 <a href="#policy" style="color: #5A4FC4; font-weight: 700">예약 변경 · 취소 · 환불 안내</a>를 확인해 주세요.</div>
+</details>
+
+</div>
+<p class="reveal" style="margin: 28px 0 0; text-align: center; font-size: 15px; color: #6B67A0">더 궁금한 점이 있다면 언제든 <a href="#contact" style="color: #5A4FC4; font-weight: 700">문의해 주세요</a> 💜</p>
+</section>
+
+<!-- ================= APPLY ================= -->
+<section id="apply" style="padding: 96px 20px 24px; scroll-margin-top: 90px">
+<div class="reveal" style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+<span class="chip">APPLY · 상담 신청</span>
+<h2 class="disp" style="margin: 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.25">상담 신청하기 📝</h2>
+<p style="margin: 0; font-size: 18px; color: #4B4785">신청서를 남겨 주시면 예약 확정을 위해 연락드려요.<br>마이트랙 성향검사는 모든 상담에 포함되어 있어요.</p>
+</div>
+
+<div class="reveal" style="max-width: 860px; margin: 28px auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px">
+<div class="glass" style="border-radius: 20px; padding: 14px 16px; display: flex; gap: 10px; align-items: center"><span class="opt-badge">1</span><span class="disp" style="font-size: 16px">신청서 작성</span></div>
+<div class="glass" style="border-radius: 20px; padding: 14px 16px; display: flex; gap: 10px; align-items: center"><span class="opt-badge">2</span><span class="disp" style="font-size: 16px">예약 확정 연락</span></div>
+<div class="glass" style="border-radius: 20px; padding: 14px 16px; display: flex; gap: 10px; align-items: center"><span class="opt-badge">3</span><span class="disp" style="font-size: 16px">마이트랙 성향검사</span></div>
+<div class="glass" style="border-radius: 20px; padding: 14px 16px; display: flex; gap: 10px; align-items: center"><span class="opt-badge">4</span><span class="disp" style="font-size: 16px">대면 상담 진행</span></div>
+</div>
+
+<div class="glass reveal" style="max-width: 860px; margin: 24px auto 0; padding: clamp(24px, 4vw, 44px); border-radius: 36px">
+
+<sc-if value="{{showForm}}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{submit}}" style="display: flex; flex-direction: column; gap: 26px">
+
+<div>
+<span class="fl">상담 종류<em>*</em></span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{kinds}}" as="k" hint-placeholder-count="3">
+<button type="button" class="{{k.cls}}" onClick="{{k.pick}}">{{k.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div>
+<span class="fl">상담 시간 · 요금<em>*</em></span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{plans}}" as="pl" hint-placeholder-count="3">
+<button type="button" class="{{pl.cls}}" onClick="{{pl.pick}}">{{pl.label}} <small>{{pl.price}}</small></button>
+</sc-for>
+</div>
+</div>
+
+<div>
+<span class="fl">희망 상담사</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{counselors}}" as="c" hint-placeholder-count="3">
+<button type="button" class="{{c.cls}}" onClick="{{c.pick}}">{{c.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<label><span class="fl">이름<em>*</em></span><input class="fi" type="text" placeholder="이름을 입력해 주세요" value="{{f.name}}" onChange="{{onName}}"></label>
+<label><span class="fl">연락처<em>*</em></span><input class="fi" type="tel" placeholder="010-0000-0000" value="{{f.phone}}" onChange="{{onPhone}}"></label>
+<label><span class="fl">희망 날짜<em>*</em></span><input class="fi" type="date" value="{{f.date}}" onChange="{{onDate}}"></label>
+<label><span class="fl">희망 시간</span><input class="fi" type="time" min="10:00" max="22:00" value="{{f.time}}" onChange="{{onTime}}"></label>
+</div>
+
+<label><span class="fl">상담받고 싶은 고민 <span style="font-family: 'Gowun Dodum', sans-serif; font-size: 14px; color: #6B67A0">(선택)</span></span><textarea class="fi" placeholder="편하게 적어 주세요. 상담 준비에 참고할게요." value="{{f.memo}}" onChange="{{onMemo}}"></textarea></label>
+
+<div style="background: rgba(255,255,255,.7); border-radius: 20px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px">
+<label class="chk"><input type="checkbox" checked="{{f.agree}}" onChange="{{onAgree}}"><span><strong style="color: #29265A">[필수]</strong> 상담 예약을 위한 개인정보(이름, 연락처) 수집·이용에 동의합니다.</span></label>
+<label class="chk"><input type="checkbox" checked="{{f.policy}}" onChange="{{onPolicy}}"><span><strong style="color: #29265A">[필수]</strong> <a href="#policy" style="color: #5A4FC4">예약 변경 · 취소 · 환불 안내</a>를 확인했습니다.</span></label>
+</div>
+
+<sc-if value="{{hasError}}" hint-placeholder-val="{{ false }}">
+<p role="alert" style="margin: 0; padding: 12px 16px; border-radius: 16px; background: #FFF3FB; color: #8A3F75; font-size: 15px">{{error}}</p>
+</sc-if>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+<button type="submit" class="btn btn-main" style="min-width: 260px; border: none; cursor: pointer; font-size: 19px">상담 신청하기</button>
+<p style="margin: 0; font-size: 14px; color: #6B67A0; text-align: center">대면 상담 · 서울역 · 사당역 · 강남역 공용 오피스 (상세 위치는 예약자에 한해 개별 공지)<br>운영시간 · 평일·토요일 오전 10:00 ~ 오후 10:00 (일요일·공휴일 휴무)</p>
+</div>
+</form>
+</sc-if>
+
+<sc-if value="{{showDone}}" hint-placeholder-val="{{ false }}">
+<div class="pop" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+<svg class="float" width="96" height="96" viewBox="0 0 60 60" aria-hidden="true"><defs><radialGradient id="dn" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".6" stop-color="#D9CFFF"></stop><stop offset="1" stop-color="#8874F5"></stop></radialGradient></defs><circle cx="30" cy="32" r="22" fill="url(#dn)"></circle><path d="M20 31 q3 -4 6 0" stroke="#29265A" stroke-width="2.4" fill="none" stroke-linecap="round"></path><path d="M34 31 q3 -4 6 0" stroke="#29265A" stroke-width="2.4" fill="none" stroke-linecap="round"></path><ellipse cx="18" cy="38" rx="4" ry="2.4" fill="#F5B8DF"></ellipse><ellipse cx="42" cy="38" rx="4" ry="2.4" fill="#F5B8DF"></ellipse><path d="M25 38 q5 5 10 0" stroke="#29265A" stroke-width="2.2" fill="none" stroke-linecap="round"></path><path d="M48 8l1.5 3.5 3.5 1.5-3.5 1.5L48 18l-1.5-3.5L43 13l3.5-1.5z" fill="#FFE38A"></path></svg>
+<h3 class="disp" style="margin: 0; font-size: 28px">신청서가 작성됐어요! 💜</h3>
+<p style="margin: 0; font-size: 16px; color: #4B4785">확인 후 남겨 주신 연락처로 예약 확정 안내를 드릴게요.</p>
+<div style="width: 100%; max-width: 440px; background: rgba(255,255,255,.8); border-radius: 22px; padding: 18px 20px; text-align: left; display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+<div style="display: flex; gap: 12px"><span class="disp" style="width: 72px; color: #8874F5">상담</span><span>{{sum.kind}} · {{sum.plan}}</span></div>
+<div style="display: flex; gap: 12px"><span class="disp" style="width: 72px; color: #8874F5">상담사</span><span>{{sum.counselor}}</span></div>
+<div style="display: flex; gap: 12px"><span class="disp" style="width: 72px; color: #8874F5">희망 일정</span><span>{{sum.when}}</span></div>
+<div style="display: flex; gap: 12px"><span class="disp" style="width: 72px; color: #8874F5">신청자</span><span>{{sum.who}}</span></div>
+</div>
+<span class="ready">● 실제 접수 연결 준비 중 · 지금은 신청서 화면만 동작해요</span>
+<button type="button" class="link-btn" onClick="{{reset}}">← 새로 작성하기</button>
+</div>
+</sc-if>
+
+</div>
+</section>
+
+<!-- ================= PART 06 CONTACT ================= -->
+<section id="contact" style="padding: 96px 20px 72px; scroll-margin-top: 90px">
+<div class="glass reveal" style="max-width: 1000px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 56px); border-radius: 48px; text-align: center; position: relative; overflow: hidden; background: linear-gradient(160deg, rgba(255,255,255,.85), rgba(245,217,240,.6) 50%, rgba(187,217,255,.6))">
+<svg class="twinkle" aria-hidden="true" style="position: absolute; left: 8%; top: 36px" width="28" height="28" viewBox="0 0 24 24"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z" fill="#C5B7FF"></path></svg>
+<svg class="float" aria-hidden="true" style="position: absolute; right: 8%; bottom: 40px" width="44" height="44" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="#F5B8DF"></path></svg>
+<svg class="float2" aria-hidden="true" width="96" height="96" viewBox="0 0 60 60" style="display: block; margin: 0 auto 12px"><defs><radialGradient id="cc" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".6" stop-color="#D9CFFF"></stop><stop offset="1" stop-color="#8874F5"></stop></radialGradient></defs><circle cx="30" cy="32" r="22" fill="url(#cc)"></circle><path d="M24 30 q-2 -3 -4 0" stroke="#29265A" stroke-width="2" fill="none" stroke-linecap="round"></path><path d="M40 30 q-2 -3 -4 0" stroke="#29265A" stroke-width="2" fill="none" stroke-linecap="round"></path><ellipse cx="18" cy="37" rx="4" ry="2.4" fill="#F5B8DF"></ellipse><ellipse cx="42" cy="37" rx="4" ry="2.4" fill="#F5B8DF"></ellipse><path d="M26 37 q4 4 8 0" stroke="#29265A" stroke-width="2" fill="none" stroke-linecap="round"></path><path d="M48 10l1.5 3.5 3.5 1.5-3.5 1.5L48 20l-1.5-3.5L43 15l3.5-1.5z" fill="#FFE38A"></path></svg>
+<h2 class="disp" style="margin: 0; font-size: clamp(30px, 4.4vw, 50px); line-height: 1.25">우리, 행운을 시작해 볼까요? 💜</h2>
+<p style="margin: 20px auto 0; max-width: 560px; font-size: 18px; color: #4B4785">나를 이해하고, 나의 가능성을 발견하고,<br>일상 속 작은 행운까지.</p>
+<p style="margin: 12px auto 0; max-width: 560px; font-size: 18px; color: #4B4785">포츈트랙과 함께 오늘보다 더 반짝이는 내일을 만들어 봐요.</p>
+<div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center">
+<a href="#contact" class="btn btn-ghost">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#29265A" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#29265A"></circle></svg>
+인스타그램 방문하기</a>
+</div>
+<p style="margin: 18px 0 0"><span class="ready">● 문의 채널 · 인스타그램 링크 연결 준비 중</span></p>
+<div style="margin: 32px auto 0; max-width: 560px; text-align: left; background: rgba(255,255,255,.85); border-radius: 26px; padding: 20px 22px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; box-shadow: 0 10px 26px rgba(136,116,245,.15)">
+<span style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 18px; background: linear-gradient(135deg, #C5B7FF, #8874F5); display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></span>
+<div style="flex: 1 1 220px">
+<p class="disp" style="margin: 0; font-size: 15px; color: #8874F5">타로·사주 상담 장소</p>
+<p style="margin: 2px 0 0; font-size: 17px; color: #29265A; font-weight: 700">서울역 · 사당역 · 강남역 공용 오피스</p>
+<p style="margin: 2px 0 0; font-size: 15px; color: #4B4785">상세 위치는 상담사님과 날짜에 따라 다르기 때문에 예약자에 한해 개별 공지해 드려요.</p>
+</div>
+</div>
+<div style="margin: 12px auto 0; max-width: 560px; text-align: left; background: rgba(255,255,255,.85); border-radius: 26px; padding: 20px 22px; display: flex; gap: 16px; align-items: center; box-shadow: 0 10px 26px rgba(136,116,245,.15)">
+<span style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 18px; background: linear-gradient(135deg, #BBD9FF, #6F9BEA); display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg></span>
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px">
+<p class="disp" style="margin: 0; font-size: 15px; color: #5B8FE8">상담 운영시간</p>
+<div style="display: flex; gap: 10px; font-size: 16px"><span style="width: 92px; color: #4B4785">평일</span><strong style="color: #29265A">오전 10:00 ~ 오후 10:00</strong></div>
+<div style="display: flex; gap: 10px; font-size: 16px"><span style="width: 92px; color: #4B4785">토요일</span><strong style="color: #29265A">오전 10:00 ~ 오후 10:00</strong></div>
+<div style="display: flex; gap: 10px; font-size: 16px"><span style="width: 92px; color: #4B4785">일요일·공휴일</span><strong style="color: #C76BAF">휴무</strong></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= FLOATING CTA ================= -->
+<a href="#apply" class="btn btn-main fab" aria-label="타로·사주 상담 문의">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3a9 9 0 1 0 6 15.5A7.2 7.2 0 0 1 15 3z" fill="#FFF3C4"></path><path d="M18 5l.8 1.8 1.8.8-1.8.8L18 10.2l-.8-1.8-1.8-.8 1.8-.8z" fill="#FFFFFF"></path></svg>
+타로·사주 상담 문의
+</a>
+
+<!-- ================= FOOTER ================= -->
+<footer style="padding: 32px 20px 110px; text-align: center">
+<p class="logo" style="margin: 0; font-size: 18px; color: #8874F5">FORTUNE TRACK</p>
+<p style="margin: 4px 0 0; font-size: 14px; color: #6B67A0">포츈트랙 · 나를 알면, 운이 보입니다.</p>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
+const PLANS = {
+  tarot: [['20분 기본 상담', '30,000원'], ['30분 집중 상담', '40,000원'], ['60분 심층 상담', '70,000원']],
+  saju: [['30분 기본 상담', '50,000원'], ['60분 종합 상담', '80,000원'], ['60분 궁합 상담', '100,000원']],
+  special: [['타로 + 사주 60분', '90,000원'], ['타로 + 사주 90분', '130,000원']]
+};
+const KINDS = [['tarot', 'NOW TRACK 타로'], ['saju', 'FLOW TRACK 사주'], ['special', 'SPECIAL 타로 + 사주']];
+const COUNSELORS = {
+  tarot: ['상관없음', '소울 (타로)', '미래 (타로)', '서윤 (사주)', '현우 (사주)'],
+  saju: ['상관없음', '소울 (타로)', '미래 (타로)', '서윤 (사주)', '현우 (사주)'],
+  special: ['상관없음', '소울 (타로)', '미래 (타로)', '서윤 (사주)', '현우 (사주)']
+};
+const EMPTY = { kind: 'tarot', plan: 0, counselor: '상관없음', name: '', phone: '', date: '', time: '', memo: '', agree: false, policy: false };
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { f: Object.assign({}, EMPTY), done: false, error: '' };
+  }
+  renderVals() {
+    const f = this.state.f;
+    const set = (patch) => this.setState({ f: Object.assign({}, this.state.f, patch), error: '' });
+    const val = (key) => (e) => set({ [key]: e.target.value });
+    const step = (dir, key) => () => {
+      const el = this[key || 'track'];
+      if (!el) return;
+      const card = el.querySelector('.rv-card');
+      const w = card ? card.getBoundingClientRect().width + 18 : el.clientWidth * 0.8;
+      el.scrollBy({ left: dir * w, behavior: 'smooth' });
+    };
+    const plans = PLANS[f.kind];
+    const kindLabel = (KINDS.find((k) => k[0] === f.kind) || KINDS[0])[1];
+    return {
+      setTrack: (el) => { this.track = el; },
+      setCTrack: (el) => { this.ctrack = el; },
+      setPTrack: (el) => { this.ptrack = el; },
+      prevProduct: step(-1, 'ptrack'),
+      nextProduct: step(1, 'ptrack'),
+      prevReview: step(-1),
+      nextReview: step(1),
+      prevCounselor: step(-1, 'ctrack'),
+      nextCounselor: step(1, 'ctrack'),
+      showForm: !this.state.done,
+      showDone: this.state.done,
+      f: f,
+      kinds: KINDS.map((k) => ({ label: k[1], cls: 'pill' + (f.kind === k[0] ? ' on' : ''), pick: () => set({ kind: k[0], plan: 0, counselor: '상관없음' }) })),
+      plans: plans.map((pl, i) => ({ label: pl[0], price: pl[1], cls: 'pill' + (f.plan === i ? ' on' : ''), pick: () => set({ plan: i }) })),
+      counselors: COUNSELORS[f.kind].map((c) => ({ label: c, cls: 'pill' + (f.counselor === c ? ' on' : ''), pick: () => set({ counselor: c }) })),
+      onName: val('name'),
+      onPhone: val('phone'),
+      onDate: val('date'),
+      onTime: val('time'),
+      onMemo: val('memo'),
+      onAgree: (e) => set({ agree: e.target.checked }),
+      onPolicy: (e) => set({ policy: e.target.checked }),
+      hasError: !!this.state.error,
+      error: this.state.error,
+      submit: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        const miss = [];
+        if (!f.name.trim()) miss.push('이름');
+        if (!f.phone.trim()) miss.push('연락처');
+        if (!f.date) miss.push('희망 날짜');
+        if (miss.length) { this.setState({ error: miss.join(', ') + '을(를) 입력해 주세요.' }); return; }
+        if (new Date(f.date + 'T12:00:00').getDay() === 0) { this.setState({ error: '일요일은 휴무예요. 다른 날짜를 선택해 주세요.' }); return; }
+        if (f.time && (f.time < '10:00' || f.time > '22:00')) { this.setState({ error: '상담 운영시간(오전 10:00 ~ 오후 10:00) 안에서 선택해 주세요.' }); return; }
+        if (!f.agree || !f.policy) { this.setState({ error: '필수 동의 항목에 체크해 주세요.' }); return; }
+        this.setState({ done: true, error: '' });
+      },
+      reset: () => this.setState({ f: Object.assign({}, EMPTY), done: false, error: '' }),
+      sum: {
+        kind: kindLabel,
+        plan: (plans[f.plan] || plans[0]).join(' '),
+        counselor: f.counselor,
+        when: f.date + (f.time ? ' ' + f.time : ''),
+        who: f.name + ' · ' + f.phone
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
